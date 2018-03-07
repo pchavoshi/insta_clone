@@ -6,4 +6,6 @@ namespace :api, defaults: {format: :json} do
   resource :session, only: [:create, :destroy]
 end
 
+root to: "static_pages#root"
+
 end
