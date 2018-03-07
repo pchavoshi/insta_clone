@@ -36,5 +36,12 @@
   "bugs": {
     "url": "https://github.com/pchavoshi/insta_clone/issues"
   },
-  "homepage": "https://github.com/pchavoshi/insta_clone#readme"
+  "homepage": "https://github.com/pchavoshi/insta_clone#readme",
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.1.x"
+  },
+  "scripts": {
+    "postinstall": "webpack"
+  }
 }
