@@ -38,8 +38,8 @@
   },
   "homepage": "https://github.com/pchavoshi/insta_clone#readme",
   "engines": {
-    "node": "6.7.0",
-    "npm": "3.10.7"
+    "node": "6.10.1",
+    "npm": "3.10.10"
   },
   "scripts": {
     "postinstall": "webpack"
