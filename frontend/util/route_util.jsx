@@ -12,8 +12,19 @@ const Auth = ({component: Component, path, loggedIn, exact}) => (
   )} />
 );
 
+const Protected = ({component: Component, path, loggedIn, exact}) => (
+  <Route path={path} exact={exact} render={(props) => (
+    !loggedIn ? (
+      <Redirect to="/signup" />
+    ) : (
+      <Component {...props} />
+    )
+  )} />
+);
+
 const mSP = state => {
   return {loggedIn: Boolean(state.session.currentUser)}
 };
 
 export const AuthRoute = withRouter(connect(mSP, null)(Auth));
+export const ProtectedRoute = withRouter(connect(mSP, null)(Protected))
