@@ -1,6 +1,6 @@
 import React from 'react';
 import {Provider } from 'react-redux';
-import app from './app';
+import App from './appp';
 import {HashRouter} from 'react-router-dom';
 
 const Root = (props) => (

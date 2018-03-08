@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import { login, logout, signup } from './actions/session_actions';
-import Root from './components/root';
+import Root from './components/rooot';
 
 
 document.addEventListener("DOMContentLoaded", () => {
