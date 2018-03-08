@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const Auth = ({component: Component, path, loggedIn, exact}) => (
@@ -16,4 +16,4 @@ const mSP = state => {
   return {loggedIn: Boolean(state.session.currentUser)}
 };
 
-export const AuthRoute = (connect(mSP, null)(Auth));
+export const AuthRoute = withRouter(connect(mSP, null)(Auth));
