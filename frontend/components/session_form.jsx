@@ -37,7 +37,7 @@ class SessionForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          Please {this.props.formType} or {this.props.navLink}
+          Please {this.props.formType}
 
           {this.renderErrors()}
 
@@ -51,6 +51,7 @@ class SessionForm extends React.Component {
 
           <input type="submit" value={this.props.formType} />
 
+            {this.props.navLink}
         </form>
       </div>
     );

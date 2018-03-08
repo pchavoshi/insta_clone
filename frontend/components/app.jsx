@@ -9,16 +9,16 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+import { AuthRoute } from '../util/route_util'; 
 
 const App = () => (
   <div>
-    <header>
-      <h1>here is a khar-inu </h1>
-      < GreetingContainer />
-    </header>
+    <h1> welcome to shiba-gram</h1>
 
-    <Route path='/login' component={LoginFormContainer} />
-    <Route path='/signup' component={SignupFormContainer} />
+      <Route path="/" component={GreetingContainer} />
+      <AuthRoute exact path='/login' component={LoginFormContainer} />
+      <AuthRoute exact path='/signup' component={SignupFormContainer} />
+
   </div>
 );
 
