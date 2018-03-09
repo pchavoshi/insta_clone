@@ -35,24 +35,35 @@ class SessionForm extends React.Component {
 
   render (){
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          Please {this.props.formType}
+      <div className="container">
 
-          {this.renderErrors()}
+        <img src="https://www.t-mobile.com/content/dam/t-mobile/en-p/cell-phones/apple/apple-iphone-7-plus/gold/Apple-iPhone7-Plus-Gold-1-3x.jpg" />
+          <div className="session-bar">
+        <div className="session-container">
 
-          <label>Username
-            <input type="text" value={this.state.username} onChange={this.update("username")}/>
-          </label>
+        <h1> welcome to shiba-gram</h1>
 
-          <label>Password
-            <input type="password" value={this.state.password} onChange={this.update("password")}/>
-          </label>
+        <p> {this.props.formType} to see photos and videos from your friends.</p>
+
+
+          <form onSubmit={this.handleSubmit}>
+
+          <div className="session-input">
+            <input type="text" value={this.state.username} placeholder="Username" onChange={this.update("username")}/>
+
+            <input type="password" value={this.state.password} placeholder="Password" onChange={this.update("password")}/>
 
           <input type="submit" value={this.props.formType} />
+          </div>
 
-            {this.props.navLink}
         </form>
+
+
+        {this.renderErrors()}
+      </div>
+
+        {this.props.navLink}
+      </div>
       </div>
     );
   }
