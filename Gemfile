@@ -23,7 +23,7 @@ gem 'binding_of_caller'
 gem 'pry-rails'
 gem 'annotate'
 gem 'bcrypt'
-gem 'jquery-rails' 
+gem 'jquery-rails'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -32,7 +32,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'paperclip', '~> 5.0.0'
+gem 'figaro'
+gem 'aws-sdk', '< 3.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

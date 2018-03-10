@@ -1,10 +1,32 @@
 class User < ApplicationRecord
 
+  has_attached_file :image, default_url: "missing.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   after_initialize :ensure_session_token
 
   validates :username, :session_token, :password_digest, presence: true
   validates :username, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
+
+  has_many :photos, dependent: :destroy
+
+  has_many :out_follows,
+  foreign_key: :follower_id,
+  class_name: :Follow
+
+  has_many :in_follows,
+  foreign_key: :followed_id,
+  class_name: :Follow
+
+  has_many :followings,
+  through: :out_follows,
+  source: :followed
+
+  has_many :followers,
+  through: :in_follows,
+  source: :follower
+
 
   attr_reader :password
 
