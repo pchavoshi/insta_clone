@@ -5,13 +5,15 @@ import { logout } from '../actions/session_actions';
 
 const mSP = state => {
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser, 
+    user: state.entities.user, 
   };
 };
 
 const mDP = dispatch => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()), 
+    
   };
 };
 
