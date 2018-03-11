@@ -1,1 +1,2 @@
-json.extract! @photo, :id, :user_id, :caption 
+json.extract! @photo, :id, :user_id, :caption
+  

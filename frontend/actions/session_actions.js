@@ -18,7 +18,7 @@ export const receiveSessionErrors = sessionErrors => {
 };
 
 export const login = user => dispatch => (
-  APIUtil.signin(user).then(user => dispatch(receiveCurrentUser(user)
+  APIUtil.signin(user).then(payload => dispatch(receiveCurrentUser(payload.user)
 ), error => dispatch(receiveSessionErrors(error.responseJSON)))
 );
 
@@ -27,6 +27,6 @@ export const logout = () => dispatch => (
 );
 
 export const signup = user => dispatch => (
-  APIUtil.signup(user).then(user => dispatch(receiveCurrentUser(user)
+  APIUtil.signup(user).then(payload => dispatch(receiveCurrentUser(payload.user)
 ), error => dispatch(receiveSessionErrors(error.responseJSON)))
 );
