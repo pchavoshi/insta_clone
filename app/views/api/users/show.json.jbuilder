@@ -1,9 +1,11 @@
 
 json.user do
-  json.extract! @user, :id, :username, :user_blurb
-  json.photo_ids @user.photos.pluck(:id)
-  json.followings @user.followings.pluck(:id)
-  json.followers @user.followers.pluck(:id)
+  json.set! @user.id do 
+    json.extract! @user, :id, :username, :user_blurb
+    json.photo_ids @user.photos.pluck(:id)
+    json.followings @user.followings.pluck(:id)
+    json.followers @user.followers.pluck(:id)
+  end
 end
 
 json.photos do

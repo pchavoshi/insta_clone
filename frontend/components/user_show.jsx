@@ -1,0 +1,35 @@
+import React from 'react';
+import FollowToggle from './follow_toggle';
+
+class UserShow extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount(){
+    this.props.getUser(this.props.match.params.userId);
+  }
+
+  componentWillReceiveProps(nextProps){
+    if (this.props.user.id != nextProps.match.params.userId) {
+      this.props.getUser(nextProps.match.params.userId)
+    }
+  }
+
+  render(){
+  return <div>
+      <p>
+        {this.props.user.username}
+        {this.props.user.user_blurb}
+        following: {this.props.user.followings}
+        followers: {this.props.user.followers}
+        posts: {this.props.user.photo_ids}
+      </p>
+
+      <FollowToggle />
+      //render the photo index
+    </div>
+  }
+}
+
+export default UserShow;

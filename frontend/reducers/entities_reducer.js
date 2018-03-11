@@ -4,7 +4,7 @@ import { combineReducers } from 'redux';
 
 const entitiesReducer = combineReducers({
   photos: photosReducer,
-  user: userReducer
+  users: userReducer
 });
 
 export default entitiesReducer;
