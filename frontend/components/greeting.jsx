@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Greeting = props => (
-  <div>
+const Greeting = props => {
+  return (<div>
     <h1>welcome, {props.currentUser.username}</h1>
     <button onClick={props.logout} value="Sign Out"/>
-  </div>
-);
+  </div>);
+};
 
 export default Greeting;

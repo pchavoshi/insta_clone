@@ -23,7 +23,7 @@ const Protected = ({component: Component, path, loggedIn, exact}) => (
 );
 
 const mSP = state => {
-  return {loggedIn: Boolean(state.session.currentUser)}
+  return {loggedIn: Boolean(state.session)}
 };
 
 export const AuthRoute = withRouter(connect(mSP, null)(Auth));

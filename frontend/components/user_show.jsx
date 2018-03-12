@@ -1,5 +1,5 @@
 import React from 'react';
-import FollowToggle from './follow_toggle';
+import FollowToggleContainer from './follow_toggle_container';
 
 class UserShow extends React.Component {
   constructor(props){
@@ -12,21 +12,20 @@ class UserShow extends React.Component {
 
   componentWillReceiveProps(nextProps){
     if (this.props.user.id != nextProps.match.params.userId) {
-      this.props.getUser(nextProps.match.params.userId)
+      this.props.getUser(nextProps.match.params.userId);
     }
   }
 
   render(){
-
-    const follow_toggle =
+    var follow_toggle;
      if (this.props.currentUser.id != this.props.user.id) {
-      return <FollowToggle follow={this.props.follow} unfollow={this.props.unfollow} userId={this.props.user.id}
-        currentUser={this.props.currentUser}/>
+      follow_toggle = < FollowToggleContainer user={this.props.user}/>;
       }
 
-      const photos = Object.values(this.props.photos)
+      const photos = Object.values(this.props.photos);
 
-  return <div>
+
+    return (<div>
       <p>
         {this.props.user.username}
         {this.props.user.user_blurb}
@@ -35,8 +34,7 @@ class UserShow extends React.Component {
         posts: {this.props.user.photo_ids}
       </p>
       {follow_toggle}
-      {photos}
-    </div>
+    </div>);
   }
 }
 

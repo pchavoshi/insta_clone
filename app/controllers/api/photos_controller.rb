@@ -19,7 +19,6 @@ class Api::PhotosController < ApplicationController
   end
 
   def update
-    debugger 
     @photo = Photo.find(params[:id])
 
     if @photo.update(photo_params)

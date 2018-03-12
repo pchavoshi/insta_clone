@@ -3,13 +3,13 @@ import React from 'react';
 class FollowToggle extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.followState()
-    this.folllowState = this.followState.bind(this)
-    this.handleClick = this.handleClick.bind(this)
+    this.state = {follow_state: this.followState()};
+    this.folllowState = this.followState.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   followState () {
-    if (this.props.currentUser.followings.includes(this.props.userId)) {
+    if (this.props.currentUser.followings.includes(this.props.user.id)) {
       return 'followed';
     } else {
       return 'unfollowed';
@@ -17,22 +17,21 @@ class FollowToggle extends React.Component {
   }
 
   handleClick(e) {
-      e.preventDefault;
 
-      if (this.state === 'followed') {
-        this.setState('unfollowing');
-        const follow = {follower_id: ${this.props.currentUser.id}, followed_id: ${this.props.userId}}
-        this.props.follow(follow);
-      } else if (this.state === 'unfollowed') {
-        this.setState('following');
-        this.props.unfollow(this.props.userId)
+      if (this.state.follow_state === 'followed') {
+        this.props.unfollow(); //!!!!!!!!!!!!!!!!!!
+        this.setState({follow_state: 'unfollowed'});
+      } else if (this.state.follow_state === 'unfollowed') {
+        const newFollow = {follower_id: this.props.currentUser.id, followed_id: this.props.user.id};
+        this.props.follow(newFollow);
+        this.setState({follow_state: 'followed'});
       }
   }
 
   render () {
     return <button onClick={this.handleClick}>
-      {this.state}
-    </button>
+      {this.state.follow_state}
+    </button>;
   }
 
 }

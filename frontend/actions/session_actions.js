@@ -3,10 +3,10 @@ import * as APIUtil from '../util/session_api_util';
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
-export const receiveCurrentUser = currentUser => {
+export const receiveCurrentUser = (payload) => {
   return {
     type: RECEIVE_CURRENT_USER,
-    currentUser
+    payload
   };
 };
 
@@ -18,15 +18,15 @@ export const receiveSessionErrors = sessionErrors => {
 };
 
 export const login = user => dispatch => (
-  APIUtil.signin(user).then(payload => dispatch(receiveCurrentUser(payload.user)
+  APIUtil.signin(user).then(payload => dispatch(receiveCurrentUser(payload)
 ), error => dispatch(receiveSessionErrors(error.responseJSON)))
 );
 
 export const logout = () => dispatch => (
-  APIUtil.signout().then(() => dispatch(receiveCurrentUser(null)))
+  APIUtil.signout().then(() => dispatch(receiveCurrentUser({user: {id: null}})))
 );
 
 export const signup = user => dispatch => (
-  APIUtil.signup(user).then(payload => dispatch(receiveCurrentUser(payload.user)
+  APIUtil.signup(user).then(payload => dispatch(receiveCurrentUser(payload)
 ), error => dispatch(receiveSessionErrors(error.responseJSON)))
 );

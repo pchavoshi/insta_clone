@@ -18,7 +18,7 @@ class Api::UsersController < ApplicationController
     else
       render json: ['User cannot be found']
     end
-  end 
+  end
 
 
 

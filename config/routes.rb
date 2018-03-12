@@ -7,7 +7,7 @@ namespace :api, defaults: {format: :json} do
   end
   resource :session, only: [:create, :destroy]
   resources :photos, only: [:create, :destroy, :update, :show]
-  resources :follows, only: [:destroy]
+  delete '/users/:user_id/unfollow', to: 'follows#destroy'
 end
 
 root to: "static_pages#root"
