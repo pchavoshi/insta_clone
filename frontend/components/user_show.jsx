@@ -17,6 +17,15 @@ class UserShow extends React.Component {
   }
 
   render(){
+
+    const follow_toggle =
+     if (this.props.currentUser.id != this.props.user.id) {
+      return <FollowToggle follow={this.props.follow} unfollow={this.props.unfollow} userId={this.props.user.id}
+        currentUser={this.props.currentUser}/>
+      }
+
+      const photos = Object.values(this.props.photos)
+
   return <div>
       <p>
         {this.props.user.username}
@@ -25,9 +34,8 @@ class UserShow extends React.Component {
         followers: {this.props.user.followers}
         posts: {this.props.user.photo_ids}
       </p>
-
-      <FollowToggle />
-      //render the photo index
+      {follow_toggle}
+      {photos}
     </div>
   }
 }
