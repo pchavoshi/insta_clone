@@ -1,12 +1,12 @@
 import React from 'react';
 import FollowToggle from './follow_toggle';
 import { connect } from 'react-redux';
-import { follow, unfollow } from '../actions/user_actions';
+import { follow, unfollow, getUser } from '../actions/user_actions';
 import {withRouter} from 'react-router-dom';
 
-const mSP = (state, props)  => {
+const mSP = (state, ownProps)  => {
   return ({
-    user: props.user,
+    user: ownProps.user,
     currentUser: state.entities.users[state.session]
   });
 };
@@ -14,8 +14,9 @@ const mSP = (state, props)  => {
 const mDP = dispatch => {
   return ({
     follow: newFollow => dispatch(follow(newFollow)),
-    unfollow: followId => dispatch(unfollow(followId))
+    unfollow: unFollow => dispatch(unfollow(unFollow)),
+    getUser: userId => dispatch(getUser(userId)),
   });
 };
 
-export default connect(mSP, mDP)(FollowToggle);
+export const FollowToggleContainer =  withRouter(connect(mSP, mDP)(FollowToggle));

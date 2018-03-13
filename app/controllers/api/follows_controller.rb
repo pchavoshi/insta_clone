@@ -1,6 +1,7 @@
 class Api::FollowsController < ApplicationController
 
   def create
+    debugger
     follow = Follow.new(follow_params)
     if follow.save
       @user = User.find(follow.followed_id)
@@ -11,7 +12,8 @@ class Api::FollowsController < ApplicationController
   end
 
   def destroy
-    follow = Follow.find(params[:id])
+    debugger
+    follow = Follow.find(params[:follow][:follower_id], params[:follow][:followed_id])
     follow.destroy
   end
 

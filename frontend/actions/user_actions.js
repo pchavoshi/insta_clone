@@ -15,6 +15,6 @@ export const follow = follow => dispatch => {
   return APIUtil.createFollow(follow).then(payload => dispatch(receiveUser(payload)))
 };
 
-export const unfollow = followId => dispatch => (
-  APIUtil.deleteFollow(followId).then(payload => dispatch(receiveUser(payload)))
+export const unfollow = unfollow => dispatch => (
+  APIUtil.deleteFollow(unfollow).then(payload => dispatch(receiveUser(payload)))
 );
