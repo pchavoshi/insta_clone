@@ -4,7 +4,6 @@ import {FollowToggleContainer} from './follow_toggle_container';
 class UserShow extends React.Component {
   constructor(props){
     super(props);
-    debugger
   }
 
   componentDidMount(){
@@ -22,9 +21,9 @@ class UserShow extends React.Component {
      if (this.props.currentUser.id != this.props.user.id) {
       follow_toggle = < FollowToggleContainer user={this.props.user}/>;
       }
-debugger
 
-
+    const photos = Object.values(this.props.photos);
+    const photo_array = photos.map(photo => photo.id)
 
     return (<div>
       <p>
@@ -35,6 +34,7 @@ debugger
         posts: {this.props.user.photo_ids}
       </p>
       {follow_toggle}
+      {photo_array}
     </div>);
   }
 }
