@@ -15,4 +15,4 @@ const mDP = dispatch => {
   };
 };
 
-export default connect(mSP, mDP)(PostForm)
+export default connect(mSP, mDP)(PostForm); 
