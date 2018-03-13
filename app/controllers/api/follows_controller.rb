@@ -12,9 +12,9 @@ class Api::FollowsController < ApplicationController
   end
 
   def destroy
-    debugger
-    follow = Follow.find(params[:follow][:follower_id], params[:follow][:followed_id])
+    follow = Follow.find_by(follower_id: params[:follow][:follower_id], followed_id: params[:follow][:followed_id])
     follow.destroy
+    debugger
   end
 
 private
