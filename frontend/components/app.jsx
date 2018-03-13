@@ -1,8 +1,7 @@
 import React from 'react';
-import GreetingContainer from './greeting_container';
-import LoginFormContainer from './login_form_container';
-import SignupFormContainer from './signup_form_container';
+import GreetingContainer from './greeting';
 import { Signup, Login } from './auth';
+
 
 import UserShowContainer from './user_show_container';
 import {

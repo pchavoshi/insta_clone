@@ -34,6 +34,7 @@ class SessionForm extends React.Component {
   }
 
   render (){
+
     return (
     <div className="sessions">
       <div className="container">
@@ -42,9 +43,10 @@ class SessionForm extends React.Component {
           <div className="session-bar">
         <div className="session-container">
 
-        <h1> welcome to shiba-gram</h1>
+        <h1>shiba-gram</h1>
 
-        <p> {this.props.formType} to see photos and videos from your friends.</p>
+        <p> {this.props.formType}</p>
+       { this.props.formType==="Sign up" ?          <p> to see photos and videos from your friends.</p>:''}
 
 
           <form onSubmit={this.handleSubmit}>
@@ -59,7 +61,7 @@ class SessionForm extends React.Component {
 
         </form>
 
-
+        { this.props.formType==="Sign up" ? <p>By signing up, you agree that you are a Good Boy! </p>:''}
         {this.renderErrors()}
       </div>
 
