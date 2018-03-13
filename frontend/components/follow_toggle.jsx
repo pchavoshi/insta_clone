@@ -8,8 +8,8 @@ class FollowToggle extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount(){
-    this.setState({follow_state: this.followState()})
+  componentWillReceiveProps(){
+    this.setState({follow_state: this.followState()});
   }
 
   followState () {

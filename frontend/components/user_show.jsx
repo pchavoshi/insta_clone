@@ -4,11 +4,9 @@ import {FollowToggleContainer} from './follow_toggle_container';
 class UserShow extends React.Component {
   constructor(props){
     super(props);
-    debugger
   }
 
   componentDidMount(){
-    debugger
     this.props.getUser(this.props.match.params.userId);
   }
 
@@ -19,7 +17,6 @@ class UserShow extends React.Component {
   }
 
   render(){
-    debugger
     var follow_toggle;
      if (this.props.currentUser.id != this.props.user.id) {
       follow_toggle = < FollowToggleContainer user={this.props.user}/>;
@@ -35,7 +32,7 @@ class UserShow extends React.Component {
         followers: {this.props.user.followers}
         posts: {this.props.user.photo_ids}
       </p>
-
+      {follow_toggle}
     </div>);
   }
 }
