@@ -4,6 +4,7 @@ import {FollowToggleContainer} from './follow_toggle_container';
 class UserShow extends React.Component {
   constructor(props){
     super(props);
+    this.state = {followings: '', followers: '', posts: ''}
   }
 
   componentDidMount(){
@@ -15,6 +16,15 @@ class UserShow extends React.Component {
       this.props.getUser(nextProps.match.params.userId);
     }
   }
+
+  componentDidUpdate() {
+    if (this.state.followings === ''){
+      this.setState({followings: this.props.user.followings.length,
+        followers: this.props.user.followers.length,
+        posts: this.props.user.photo_ids.length});
+    }
+  }
+
 
   render(){
     var follow_toggle;
@@ -29,9 +39,9 @@ class UserShow extends React.Component {
       <p>
         {this.props.user.username}
         {this.props.user.user_blurb}
-        following: {this.props.user.followings}
-        followers: {this.props.user.followers}
-        posts: {this.props.user.photo_ids}
+        following: {this.state.followings}
+        followers: {this.state.followers}
+        posts: {this.state.posts}
       </p>
       {follow_toggle}
       {photo_array}
