@@ -34,6 +34,7 @@ class SessionForm extends React.Component {
   }
 
   render (){
+
     return (
     <div className="sessions">
       <div className="container">
@@ -44,7 +45,8 @@ class SessionForm extends React.Component {
 
         <h1> welcome to shiba-gram</h1>
 
-        <p> {this.props.formType} to see photos and videos from your friends.</p>
+        <p> {this.props.formType}</p>
+       { this.props.formType==="Sign up" ?          <p> to see photos and videos from your friends.</p>:''}
 
 
           <form onSubmit={this.handleSubmit}>

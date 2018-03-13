@@ -1,5 +1,5 @@
 import React from 'react';
 
-const PostForm 
+const PostForm
 
 export default PostForm;
