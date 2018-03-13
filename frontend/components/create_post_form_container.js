@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { newPhoto } from '../actions/photo_actions';
 import PostForm from './post_form';
 
+
 const mSP = () => {
   return {
       formType: 'New Post'

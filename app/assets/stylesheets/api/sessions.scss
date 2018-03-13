@@ -1,7 +1,7 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.sessions{
 .container {
 display: flex;
 justify-content: center;
@@ -30,7 +30,7 @@ height: 530px;
   border: 1px solid black;
   width: 250px;
   height: 650px;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 .session-input {
   display: flex;
@@ -42,4 +42,5 @@ height: 530px;
 .container img{
   width: auto;
   height: 630px
+}
 }
