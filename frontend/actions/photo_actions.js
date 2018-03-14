@@ -2,14 +2,6 @@ import * as APIUtil from '../util/photo_api_util';
 
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
 export const DELETE_PHOTO = 'DELETE_PHOTO';
-export const RECEIVE_ALL_PHOTOS = "RECEIVE_ALL_PHOTOS";
-
-export const receiveAllPhotos = photos => (
-  {
-    type: RECEIVE_ALL_PHOTOS,
-    photos
-  }
-);
 
 export const receivePhoto = photo => (
   {

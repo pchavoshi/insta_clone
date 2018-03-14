@@ -1,9 +1,15 @@
 import * as APIUtil from '../util/user_api_util';
 
 export const RECEIVE_USER = 'RECEIVE_USER';
+export const RECEIVE_USER_UNFOLLOW = "RECEIVE_USER_UNFOLLOW"
 
 export const receiveUser = payload => ({
   type: RECEIVE_USER,
+  payload
+});
+
+export const receiveUserUnfollow = payload => ({
+  type: RECEIVE_USER_UNFOLLOW,
   payload
 });
 
@@ -16,5 +22,5 @@ export const follow = follow => dispatch => {
 };
 
 export const unfollow = unfollow => dispatch => (
-  APIUtil.deleteFollow(unfollow).then(payload => dispatch(receiveUser(payload)))
+  APIUtil.deleteFollow(unfollow).then(payload => dispatch(receiveUserUnfollow(payload)))
 );
