@@ -28,7 +28,7 @@ class UserShow extends React.Component {
       }
 
     const photos = Object.values(this.props.photos);
-    const photo_array = photos.map(photo => photo.id);
+    const photo_array = photos.map(photo => photo.image);
 
     return (<div>
       <p>

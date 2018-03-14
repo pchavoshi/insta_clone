@@ -7,22 +7,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
   User.destroy_all
-
-  u1 = User.create(username: "parisa1", password_digest: BCrypt::Password.create("fruity"))
-  u2 = User.create(username: "parisa2", password_digest: BCrypt::Password.create("fruity"))
-  u3 = User.create(username: "parisa3", password_digest: BCrypt::Password.create("fruity"))
+  file1 = File.open('app/assets/images/profile.jpg')
+  u1 = User.create(username: "parisa1", password_digest: BCrypt::Password.create("fruity"), user_blurb: "best boy!", image: file1)
+  u2 = User.create(username: "parisa2", password_digest: BCrypt::Password.create("fruity"), user_blurb: "a good boy!", image: file1)
+  u3 = User.create(username: "parisa3", password_digest: BCrypt::Password.create("fruity"), user_blurb: "sad boy", image: file1)
 
   Photo.destroy_all
-
-  u1.photos.create(user_id: u1.id)
-  u1.photos.create(user_id: u1.id)
-  u1.photos.create(user_id: u1.id)
-  u2.photos.create(user_id: u2.id)
-  u2.photos.create(user_id: u2.id)
-  u2.photos.create(user_id: u2.id)
-  u3.photos.create(user_id: u3.id)
-  u3.photos.create(user_id: u3.id)
-  u3.photos.create(user_id: u3.id)
+  file = File.open('app/assets/images/shiba.jpg')
+  u1.photos.create(user_id: u1.id, caption: "such cuteness!", image: file)
+  u1.photos.create(user_id: u1.id, caption: "such cuteness!", image: file)
+  u1.photos.create(user_id: u1.id, caption: "such cuteness!", image: file)
+  u2.photos.create(user_id: u2.id, caption: "such cuteness!", image: file)
+  u2.photos.create(user_id: u2.id, caption: "such cuteness!", image: file)
+  u2.photos.create(user_id: u2.id, caption: "such cuteness!", image: file)
+  u3.photos.create(user_id: u3.id, caption: "such cuteness!", image: file)
+  u3.photos.create(user_id: u3.id, caption: "such cuteness!", image: file)
+  u3.photos.create(user_id: u3.id, caption: "such cuteness!", image: file)
 
   Follow.destroy_all
 
