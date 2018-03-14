@@ -32,7 +32,7 @@ class UserShow extends React.Component {
 
     return (<div>
       <p>
-        <img src={this.props.user.image} />
+        <img src={`json.image_url asset_path(${this.props.user.image}(:original))`} />
         {this.props.user.username}
         {this.props.user.user_blurb}
         following: {this.state.followings}
