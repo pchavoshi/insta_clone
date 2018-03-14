@@ -15,7 +15,7 @@ class PostForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state);
+    this.props.processForm({image: this.state.imageFile, caption: this.state.caption, user_id: this.props.currentUser});
   }
 
   update(field) {
