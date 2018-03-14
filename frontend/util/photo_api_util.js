@@ -1,8 +1,10 @@
-export const makePhoto = photo => (
+export const makePhoto = formData => (
   $.ajax({
     url: '/api/photos',
     method: 'POST',
-    data: {photo }
+    processData: false,
+    contentType: false,
+    data: formData
   })
 );
 

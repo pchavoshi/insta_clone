@@ -14,8 +14,11 @@ class PostForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    this.props.processForm({image: this.state.imageFile, caption: this.state.caption, user_id: this.props.currentUser});
+    var formData = new FormData();
+    formData.append("photo[caption]", this.state.caption);
+    formData.append('photo[image]', this.state.imageFile);
+    formData.append('photo[user_id]', this.props.currentUser);
+    this.props.processForm(formData);
   }
 
   update(field) {
