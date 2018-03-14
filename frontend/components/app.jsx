@@ -2,6 +2,7 @@ import React from 'react';
 import GreetingContainer from './greeting';
 import { Signup, Login } from './auth';
 import UserShowContainer from './user_show_container';
+import CreatePostFormContainer from './create_post_form_container';
 import {
   Route,
   Redirect,
@@ -18,6 +19,7 @@ const App = () => (
       <AuthRoute exact path='/login' component={Login} />
       <AuthRoute exact path='/signup' component={Signup} />
       <ProtectedRoute path='/users/:userId' component={UserShowContainer} />
+      <ProtectedRoute path='/new' component={CreatePostFormContainer} />
   </div>
 );
 
