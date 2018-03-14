@@ -7,7 +7,6 @@ const photosReducer = ( state = {}, action ) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_USER:
-    case RECEIVE_CURRENT_USER:
       return merge({}, state, action.payload.photos);
     case RECEIVE_PHOTO:
       return merge({}, state, {[action.photo.id]: action.photo});
