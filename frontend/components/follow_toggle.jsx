@@ -8,13 +8,14 @@ class FollowToggle extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentWillReceiveProps(){
-    this.setState({follow_state: this.followState()});
-  }
-  
 
-  followState () {
-    if (this.props.currentUser.followings.includes(this.props.user.id)) {
+  componentWillReceiveProps(nextProps){
+    if ( nextProps.user.username != "" && nextProps.user != this.props.user )
+  this.setState({follow_state: this.followState(nextProps.user)});
+  }
+
+  followState (nextUser) {
+    if (nextUser.followers.includes(this.props.currentUser.id) ) {
       return 'followed';
     } else {
       return 'unfollowed';

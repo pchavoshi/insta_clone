@@ -13,18 +13,13 @@ class UserShow extends React.Component {
 
   componentWillReceiveProps(nextProps){
     if (this.props.user.id != nextProps.match.params.userId) {
-      this.props.getUser(nextProps.match.params.userId);
+        this.props.getUser(nextProps.match.params.userId);
+    } else if (this.state.followers != nextProps.user.followers.length) {
+      this.setState({followings: nextProps.user.followings.length,
+        followers: nextProps.user.followers.length,
+        posts: nextProps.user.photo_ids.length});
     }
   }
-
-  componentDidUpdate() {
-    if (this.state.followings === ''){
-      this.setState({followings: this.props.user.followings.length,
-        followers: this.props.user.followers.length,
-        posts: this.props.user.photo_ids.length});
-    }
-  }
-
 
   render(){
     var follow_toggle;
