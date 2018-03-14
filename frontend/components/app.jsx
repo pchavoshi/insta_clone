@@ -1,8 +1,6 @@
 import React from 'react';
 import GreetingContainer from './greeting';
 import { Signup, Login } from './auth';
-
-
 import UserShowContainer from './user_show_container';
 import {
   Route,
