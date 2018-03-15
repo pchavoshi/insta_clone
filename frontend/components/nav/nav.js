@@ -7,7 +7,7 @@ const Nav = (props) => {
       this is the nav
       <button onClick={props.logout}> Sign Out </button>
       <Link to={`/users/${props.currentUser.id}`}> Profile Page </Link>
-      <Link to="/main"> Home Page </Link>
+      <Link to="/"> Home Page </Link>
     </div>
   );
 };
