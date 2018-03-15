@@ -1,7 +1,7 @@
 import React from 'react';
 import GreetingContainer from './feed';
 import { Signup, Login } from './auth';
-import UserShowContainer from './user/profile';
+import Profile from './user/profile';
 import CreatePostFormContainer from './create_post_form_container';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -12,7 +12,7 @@ const App = () => (
     <ProtectedRoute exact path="/" component={Main} />
     <AuthRoute exact path="/login" component={Login} />
     <AuthRoute exact path="/signup" component={Signup} />
-    <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
+    <ProtectedRoute path="/users/:userId" component={Profile} />
     <ProtectedRoute path="/new" component={CreatePostFormContainer} />
   </div>
 );

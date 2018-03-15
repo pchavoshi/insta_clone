@@ -1,7 +1,7 @@
 import React from 'react';
-import { FollowToggleContainer } from '../../follow_toggle_container';
+import { FollowToggleContainer } from '../follow_toggle';
 
-class UserShow extends React.Component {
+class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = { followings: [], followers: [], posts: [] };
@@ -37,19 +37,19 @@ class UserShow extends React.Component {
 
     return (
       <div>
-        <p>
+        <ul>
           <img src={this.props.user.image} />
           {this.props.user.username}
           {this.props.user.user_blurb}
           following: {this.state.followings.length}
           followers: {this.state.followers.length}
           posts: {this.state.posts.length}
-        </p>
-        {follow_toggle}
+            {follow_toggle}
+        </ul>
         {photo_array}
       </div>
     );
   }
 }
 
-export default UserShow;
+export default Profile;
