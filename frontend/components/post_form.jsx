@@ -7,8 +7,7 @@ class PostForm extends React.Component {
     this.state = {
       imageUrl: "",
       imageFile: "",
-      caption: "",
-      redirectToNewPage: false
+      caption: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,7 +20,7 @@ class PostForm extends React.Component {
     formData.append('photo[image]', this.state.imageFile);
     formData.append('photo[user_id]', this.props.currentUser);
     this.props.processForm(formData);
-    this.setState({redirectToNewPage: true});
+    this.props.closeModal();
   }
 
   update(field) {
@@ -44,13 +43,6 @@ class PostForm extends React.Component {
     }
 
   render (){
-
-    if (this.state.redirectToNewPage) {
-      return (
-        <Redirect to={`/users/${this.props.currentUser}`} />
-      );
-    }
-
     return (
       <div>
         <h1> {this.props.formType }</h1>
@@ -59,7 +51,7 @@ class PostForm extends React.Component {
 
         <input type="text" value={this.state.caption} placeholder="Caption" onChange={this.update("caption")}/>
         <input type="file" onChange={this.updateFile} />
-        <button onClick={this.handleSubmit}>{this.props.formType}</button>
+        <button type="button" onClick={this.handleSubmit}>{this.props.formType}</button>
         <img src={this.state.imageUrl} />
 
         </form>

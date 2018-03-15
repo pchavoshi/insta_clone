@@ -21,14 +21,6 @@ export const newPhoto = photo => dispatch => (
   APIUtil.makePhoto(photo).then(photo => dispatch(receivePhoto(photo)))
 );
 
-export const editPhoto = photo => dispatch => (
-  APIUtil.editPhoto(photo).then(photo => dispatch(receivePhoto(photo)))
-);
-
 export const deletePhoto = photoId => dispatch => (
   APIUtil.deletePhoto(photoId).then(photo => dispatch(removePhoto(photoId)))
-);
-
-export const getPhoto = photoId => dispatch => (
-  APIUtil.getPhoto(photoId).then(photo => dispatch(receivePhoto(photo.id)))
 );
