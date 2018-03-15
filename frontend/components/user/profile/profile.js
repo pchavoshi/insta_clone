@@ -8,14 +8,13 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    const uid = this.props.user.id || this.props.match.params.userId;
-    this.props.getUser(uid);
+    this.props.getUser(this.props.match.params.userId);
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.user.id != nextProps.user.id) {
       this.props.getUser(nextProps.match.params.userId);
-    } else if (this.state.followers != nextProps.user.followers.length) {
+    } else if (this.state.followers.length != nextProps.user.followers.length) {
       this.setState({
         followings: nextProps.user.followings,
         followers: nextProps.user.followers,
@@ -31,8 +30,8 @@ class Profile extends React.Component {
     }
 
     const photos = Object.values(this.props.photos);
-    const photo_array = photos.map((photo, i) => (
-      <img key={i} src={photo.image} />
+    const photo_array = photos.map( photo => (
+      <img key={photo.id} src={photo.image} />
     ));
 
     return (

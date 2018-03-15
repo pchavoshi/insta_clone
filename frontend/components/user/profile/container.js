@@ -5,8 +5,7 @@ import { getUser } from '../../../actions/user_actions';
 
 const mSP = (state, ownProps) => {
   const defaultUser = { username: '' };
-  const uid = ownProps.uid || ownProps.match.params.userId;
-  const user = state.entities.users[uid] || defaultUser;
+  const user = state.entities.users[ownProps.match.params.userId] || defaultUser;
 
   return {
     currentUser: state.entities.users[state.session],
