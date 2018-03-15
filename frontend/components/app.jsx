@@ -5,9 +5,11 @@ import UserShowContainer from './user/profile';
 import CreatePostFormContainer from './create_post_form_container';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Main from './main'; 
 
 const App = () => (
   <div>
+    <ProtectedRoute path="/main" component={Main} />
     <ProtectedRoute exact path="/" component={GreetingContainer} />
     <AuthRoute exact path="/login" component={Login} />
     <AuthRoute exact path="/signup" component={Signup} />
