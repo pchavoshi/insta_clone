@@ -29,7 +29,7 @@ class Profile extends React.Component {
     if (this.props.currentUser.id != this.props.user.id) {
       user_button = <FollowToggleContainer user={this.props.user} />;
     } else {
-      user_button = <Link to="/new">Add New Photo </Link>
+      user_button = <Link to="/new">Add New Photo </Link>; 
     }
 
     const photos = Object.values(this.props.photos);

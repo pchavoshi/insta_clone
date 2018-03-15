@@ -1,4 +1,5 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 
 class PostForm extends React.Component {
   constructor(props){
@@ -6,7 +7,8 @@ class PostForm extends React.Component {
     this.state = {
       imageUrl: "",
       imageFile: "",
-      caption: ""
+      caption: "",
+      redirectToNewPage: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,6 +21,7 @@ class PostForm extends React.Component {
     formData.append('photo[image]', this.state.imageFile);
     formData.append('photo[user_id]', this.props.currentUser);
     this.props.processForm(formData);
+    this.setState({redirectToNewPage: true});
   }
 
   update(field) {
@@ -41,6 +44,13 @@ class PostForm extends React.Component {
     }
 
   render (){
+
+    if (this.state.redirectToNewPage) {
+      return (
+        <Redirect to={`/users/${this.props.currentUser}`} />
+      );
+    }
+
     return (
       <div>
         <h1> {this.props.formType }</h1>
