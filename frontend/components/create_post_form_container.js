@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import { newPhoto } from '../actions/photo_actions';
 import PostForm from './post_form';
 
-
-const mSP = (state) => {
+const mSP = state => {
   return {
-      formType: 'New Post',
-      currentUser: state.session
+    formType: 'New Post',
+    currentUser: state.session
   };
 };
 

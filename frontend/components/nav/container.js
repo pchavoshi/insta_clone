@@ -1,6 +1,6 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import Greeting from './greeting';
+import { connect } from 'react-redux';
+import Nav from './nav';
 import { logout } from '../../actions/session_actions';
 
 const mSP = state => {
@@ -15,4 +15,4 @@ const mDP = dispatch => {
   };
 };
 
-export default connect(mSP, mDP)(Greeting);
+export default connect(mSP, mDP)(Nav);
