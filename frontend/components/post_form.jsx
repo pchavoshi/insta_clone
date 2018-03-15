@@ -1,4 +1,5 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 
 class PostForm extends React.Component {
   constructor(props){
@@ -19,6 +20,7 @@ class PostForm extends React.Component {
     formData.append('photo[image]', this.state.imageFile);
     formData.append('photo[user_id]', this.props.currentUser);
     this.props.processForm(formData);
+    this.props.closeModal();
   }
 
   update(field) {
@@ -49,7 +51,7 @@ class PostForm extends React.Component {
 
         <input type="text" value={this.state.caption} placeholder="Caption" onChange={this.update("caption")}/>
         <input type="file" onChange={this.updateFile} />
-        <button onClick={this.handleSubmit}>{this.props.formType}</button>
+        <button type="button" onClick={this.handleSubmit}>{this.props.formType}</button>
         <img src={this.state.imageUrl} />
 
         </form>
