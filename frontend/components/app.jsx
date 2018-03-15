@@ -1,5 +1,4 @@
 import React from 'react';
-import GreetingContainer from './feed';
 import { Signup, Login } from './auth';
 import Profile from './user/profile';
 import CreatePostFormContainer from './create_post_form_container';

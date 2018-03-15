@@ -1,5 +1,6 @@
 import React from 'react';
 import { FollowToggleContainer } from '../follow_toggle';
+import { Link } from 'react-router-dom';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -24,9 +25,11 @@ class Profile extends React.Component {
   }
 
   render() {
-    var follow_toggle;
+    var user_button;
     if (this.props.currentUser.id != this.props.user.id) {
-      follow_toggle = <FollowToggleContainer user={this.props.user} />;
+      user_button = <FollowToggleContainer user={this.props.user} />;
+    } else {
+      user_button = <Link to="/new">Add New Photo </Link>
     }
 
     const photos = Object.values(this.props.photos);
@@ -43,7 +46,7 @@ class Profile extends React.Component {
           following: {this.state.followings.length}
           followers: {this.state.followers.length}
           posts: {this.state.posts.length}
-            {follow_toggle}
+            {user_button}
         </ul>
         {photo_array}
       </div>
