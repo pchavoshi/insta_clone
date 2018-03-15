@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Nav = () => {
+const Nav = (props) => {
   return (
     <div>
       this is the nav
-      <Link to="/"> Sign Up </Link>
-      <Link to="/login"> Sign Up </Link>
-      <Link to="/signup"> Sign Up </Link>
+      <button onClick={props.logout}> Sign Out </button>
+      <Link to={`/users/${props.currentUser.id}`}> Profile Page </Link>
+      <Link to="/"> Home Page </Link>
     </div>
   );
 };

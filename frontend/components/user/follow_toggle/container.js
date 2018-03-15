@@ -1,7 +1,7 @@
 import React from 'react';
 import FollowToggle from './follow_toggle';
 import { connect } from 'react-redux';
-import { follow, unfollow, getUser } from '../actions/user_actions';
+import { follow, unfollow, getUser } from '../../../actions/user_actions';
 import {withRouter} from 'react-router-dom';
 
 const mSP = (state, ownProps)  => {

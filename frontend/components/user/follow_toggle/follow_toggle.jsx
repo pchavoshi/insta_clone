@@ -26,7 +26,7 @@ class FollowToggle extends React.Component {
 
       if (this.state.follow_state === 'followed') {
         this.setState({follow_state: 'unfollowing'});
-        const unFollow = {follower_id: this.props.currentUser.id, followed_id: this.props.user.id}
+        const unFollow = {follower_id: this.props.currentUser.id, followed_id: this.props.user.id};
         this.props.unfollow(unFollow);
         this.setState({follow_state: 'unfollowed'});
       } else if (this.state.follow_state === 'unfollowed') {
