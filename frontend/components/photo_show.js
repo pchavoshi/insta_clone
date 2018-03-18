@@ -1,7 +1,17 @@
 import React from 'react';
 
-const PhotoShow = props => {
-  return <h1> i'm the photo show</h1>;
-};
+class PhotoShow extends React.Component {
+  componentDidMount() {
+    this.props.getPhoto(this.props.match.params.photoId);
+  }
+
+  render() {
+    return (
+      <div>
+        <img src={this.props.photo.image} />
+      </div>
+    );
+  }
+}
 
 export default PhotoShow;
