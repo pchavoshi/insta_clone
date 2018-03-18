@@ -10,7 +10,7 @@ namespace :api, defaults: {format: :json} do
   resource :session, only: [:create, :destroy]
 
   resources :photos, only: [:create, :destroy, :update, :show] do
-    resources :comments, only: [:create, :index, :update, :destroy]
+    resources :comments, only: [:create, :update, :destroy]
   end
 
   delete '/users/:user_id/unfollow', to: 'follows#destroy'

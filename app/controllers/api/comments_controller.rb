@@ -3,11 +3,6 @@ class Api::CommentsController < ApplicationController
 
   end
 
-  def index
-    @photo = Photo.find(params[:photo_id])
-    render "api/comments/index"
-  end
-
   def update
   end
 
