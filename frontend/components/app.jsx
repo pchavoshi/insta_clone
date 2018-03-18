@@ -1,20 +1,20 @@
 import React from 'react';
-import { Signup, Login } from './auth';
-import Profile from './user/profile';
-import CreatePostFormContainer from './create_post_form_container';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { Signup, Login } from './auth';
+import Profile from './user/profile';
 import Main from './main';
 import Modal from './modal';
+import PhotoShowContainer from './photo_show_container';
 
 const App = () => (
   <div>
-  <Modal />
-    <ProtectedRoute exact path="/" component={Main} />
+    <Modal />
     <AuthRoute exact path="/login" component={Login} />
     <AuthRoute exact path="/signup" component={Signup} />
+    <ProtectedRoute exact path="/" component={Main} />
     <ProtectedRoute path="/users/:userId" component={Profile} />
-    <ProtectedRoute path="/new" component={CreatePostFormContainer} />
+    <ProtectedRoute path="/photos/:photoId" component={PhotoShowContainer} />
   </div>
 );
 

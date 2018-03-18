@@ -14,15 +14,9 @@
 
   Photo.destroy_all
   file = File.open('app/assets/images/shiba.jpg')
-  u1.photos.create(user_id: u1.id, caption: "such cuteness!", image: file)
-  u1.photos.create(user_id: u1.id, caption: "such cuteness!", image: file)
-  u1.photos.create(user_id: u1.id, caption: "such cuteness!", image: file)
-  u2.photos.create(user_id: u2.id, caption: "such cuteness!", image: file)
-  u2.photos.create(user_id: u2.id, caption: "such cuteness!", image: file)
-  u2.photos.create(user_id: u2.id, caption: "such cuteness!", image: file)
-  u3.photos.create(user_id: u3.id, caption: "such cuteness!", image: file)
-  u3.photos.create(user_id: u3.id, caption: "such cuteness!", image: file)
-  u3.photos.create(user_id: u3.id, caption: "such cuteness!", image: file)
+  p1 = u1.photos.create(user_id: u1.id, caption: "such cuteness!", image: file)
+  p2 = u2.photos.create(user_id: u2.id, caption: "such cuteness!", image: file)
+  p3 = u3.photos.create(user_id: u3.id, caption: "such cuteness!", image: file)
 
   Follow.destroy_all
 
@@ -30,3 +24,9 @@
   u1.out_follows.create(followed_id: u3.id)
   u2.out_follows.create(followed_id: u1.id)
   u3.out_follows.create(followed_id: u2.id)
+
+  Comment.destroy_all
+  c1 = p1.comments.create(user_id: u2.id, content: "way too cute!")
+  c2 = p2.comments.create(user_id: u3.id, content: "wow!")
+  c3 = p3.comments.create(user_id: u1.id, content: ":)")
+  c4 = c1.child_comments.create(user_id: u1.id, content: "thanks!", photo_id: p1.id)
