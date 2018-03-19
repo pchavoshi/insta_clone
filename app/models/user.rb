@@ -27,6 +27,7 @@ class User < ApplicationRecord
   through: :in_follows,
   source: :follower
 
+  has_many :comments 
 
   attr_reader :password
 

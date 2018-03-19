@@ -12,7 +12,7 @@ class Api::PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     if @photo.save
-      render  "api/photos/show"
+      render  "api/photos/add"
     else
       render json: @photo.errors.full_messages, status: 422
     end
