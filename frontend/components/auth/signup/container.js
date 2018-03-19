@@ -1,10 +1,10 @@
 import SessionForm from '../session_form';
 import React from 'react';
-import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {signup} from '../../../actions/session_actions';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { signup } from '../../../actions/session_actions';
 
-const mSP = (state) => {
+const mSP = state => {
   return {
     errors: state.errors.session,
     formType: 'Sign up',

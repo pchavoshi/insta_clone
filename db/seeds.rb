@@ -24,9 +24,11 @@
   u1.out_follows.create(followed_id: u3.id)
   u2.out_follows.create(followed_id: u1.id)
   u3.out_follows.create(followed_id: u2.id)
+  u3.out_follows.create(followed_id: u1.id)
 
   Comment.destroy_all
   c1 = p1.comments.create(user_id: u2.id, content: "way too cute!")
   c2 = p2.comments.create(user_id: u3.id, content: "wow!")
   c3 = p3.comments.create(user_id: u1.id, content: ":)")
-  c4 = c1.child_comments.create(user_id: u1.id, content: "thanks!", photo_id: p1.id)
+  
+  c5 = p1.comments.create(user_id: u3.id, content: "omg")

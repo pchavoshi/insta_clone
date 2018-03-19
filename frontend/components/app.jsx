@@ -6,6 +6,7 @@ import Profile from './user/profile';
 import Main from './main';
 import Modal from './modal';
 import PhotoShowContainer from './photo_show_container';
+import { EditCommentContainer } from './edit_comment_container';
 
 const App = () => (
   <div>
@@ -15,6 +16,10 @@ const App = () => (
     <ProtectedRoute exact path="/" component={Main} />
     <ProtectedRoute path="/users/:userId" component={Profile} />
     <ProtectedRoute path="/photos/:photoId" component={PhotoShowContainer} />
+    <ProtectedRoute
+      path="/comments/:commentId/edit"
+      component={EditCommentContainer}
+    />
   </div>
 );
 

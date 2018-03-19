@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Main = () => {
-  return <h1>im a butt</h1>;
+  return <h1>im the main</h1>;
 };
 
 export default Main;

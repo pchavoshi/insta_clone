@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { getPhoto } from './actions/photo_actions';
+import { makeComment } from './actions/comment_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -20,5 +20,5 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={store} />, root);
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.getPhoto = getPhoto;
+  window.makeComment = makeComment;
 });
