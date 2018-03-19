@@ -16,11 +16,17 @@ The frontend utilizes the React/Redux package.
 
 ## Implemented Features: 
 *Sign Up/Login 
+
 *User Profile Page 
+
 *Add Photo Modal 
+
 *Photo Show Page with Comments
+
 *Add Comment Form 
+
 *User Profile Views 
+
 *User Follow Toggle 
 
 ## Additions to Be Implemented: 
