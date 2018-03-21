@@ -1,8 +1,8 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom'; 
+import { Redirect } from 'react-router-dom';
 
-class CreateComment extends React.Component {
-  constructor(props) {
+class CommentForm extends React.Component {
+  constructor(props) {console.log("what is props", props)
     super(props);
     this.state = {
       content: ''
@@ -10,6 +10,10 @@ class CreateComment extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.createComment = this.createComment.bind(this);
     this.editComment = this.editComment.bind(this);
+  }
+
+  componentWillMount() {
+    this.setState({content: this.props.comment.content});
   }
 
   update(field) {
@@ -33,7 +37,7 @@ class CreateComment extends React.Component {
       photo_id: this.props.comment.photo_id,
       content: this.state.content
     });
-    this.props.history.replace(`/photos/${this.props.comment.photo_id}`)
+    this.props.closeEdit();
   }
 
   handleSubmit(e) {
@@ -63,4 +67,4 @@ class CreateComment extends React.Component {
   }
 }
 
-export default CreateComment;
+export default CommentForm;
