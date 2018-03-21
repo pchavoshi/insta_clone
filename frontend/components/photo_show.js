@@ -3,7 +3,7 @@ import CommentIndexContainer from './comment_index_container';
 
 class PhotoShow extends React.Component {
   componentDidMount() {
-    this.props.getPhoto(this.props.match.params.photoId);
+    this.props.getPhoto(this.props.modal.id);
   }
 
   render() {

@@ -34,15 +34,23 @@ class Profile extends React.Component {
       user_button = <FollowToggleContainer user={this.props.user} />;
     } else {
       user_button = (
-        <button onClick={this.props.openModal('add_photo')}>Add Photo</button>
+        <button onClick={this.props.openModal({type: 'add_photo'})}>Add Photo</button>
       );
     }
 
+    // const photos = this.props.photos;
+    // const photo_array = photos.map(photo => (
+    //   <Link to={`/photos/${photo.id}`} key={photo.id}>
+    //     <img src={photo.image} />
+    //   </Link>
+    // ));
+    //   {photo_array}
+
     const photos = this.props.photos;
     const photo_array = photos.map(photo => (
-      <Link to={`/photos/${photo.id}`} key={photo.id}>
+      <button key={photo.id} onClick={this.props.openModal({type: 'show_photo', id: photo.id})} >
         <img src={photo.image} />
-      </Link>
+      </button>
     ));
 
     return (

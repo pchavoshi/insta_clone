@@ -12,7 +12,7 @@ class CreateComment extends React.Component {
     this.editComment = this.editComment.bind(this);
   }
   
-  componentDidMount() {
+  componentWillMount() {
     this.setState({content: this.props.comment.content}); 
   }
 

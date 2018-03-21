@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreatePostContainer from './create_post_form_container';
+import PhotoShowContainer from './photo_show_container';
 
 
 function Modal({modal, closeModal}) {
@@ -9,9 +10,12 @@ function Modal({modal, closeModal}) {
     return null;
   }
   let component;
-  switch (modal) {
+  switch (modal.type) {
     case 'add_photo':
       component = <CreatePostContainer />;
+      break;
+    case 'show_photo':
+      component = <PhotoShowContainer photoId={modal.id}/>;
       break;
     default:
       return null;
