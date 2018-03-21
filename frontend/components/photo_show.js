@@ -12,7 +12,7 @@ class PhotoShow extends React.Component {
       <div>
         <img src={this.props.photo.image} />
         <h1>Comments:</h1>
-        <CommentIndex comments={this.props.comments} />
+        <CommentIndex comments={this.props.comments}/>
         <CreateCommentContainer />
       </div>
     );

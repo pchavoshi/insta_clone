@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'; 
 
 class CreateComment extends React.Component {
   constructor(props) {
@@ -12,11 +13,8 @@ class CreateComment extends React.Component {
   }
 
   update(field) {
-    console.log(field);
     return e => {
-      console.log(e.target.value);
       this.setState({ [field]: e.target.value });
-      console.log(this.state);
     };
   }
 
@@ -29,14 +27,13 @@ class CreateComment extends React.Component {
   }
 
   editComment() {
-    console.log('editComment', this.props.comment);
-    console.log('editComment', this.state);
     this.props.sendComment({
       id: this.props.comment.id,
       user_id: this.props.comment.user_id,
       photo_id: this.props.comment.photo_id,
       content: this.state.content
     });
+    this.props.history.replace(`/photos/${this.props.comment.photo_id}`)
   }
 
   handleSubmit(e) {
@@ -54,7 +51,7 @@ class CreateComment extends React.Component {
           <input
             type="text"
             value={this.state.content}
-            placeholder="Add Comment"
+            placeholder={this.props.formType}
             onChange={this.update('content')}
           />
           <button type="button" onClick={this.handleSubmit}>

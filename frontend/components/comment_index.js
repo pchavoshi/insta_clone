@@ -1,9 +1,9 @@
 import React from 'react';
-import CommentIndexItem from './comment_index_item';
+import CommentIndexItemContainer from './comment_index_item_container';
 
-const CommentIndex = props => {
+const CommentIndex = props => { 
   const commentsArray = props.comments.map(comment => (
-    <CommentIndexItem comment={comment} key={comment.id} />
+    <CommentIndexItemContainer comment={comment}  key={comment.id} />
   ));
 
   return <div>{commentsArray}</div>;
