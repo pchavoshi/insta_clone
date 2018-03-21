@@ -21,21 +21,23 @@ The frontend utilizes the React/Redux package.
 
 *Add Photo Modal 
 
-*Photo Show Page with Comments
+*Photo Show Modal with Comments
 
-*Add Comment Form 
+*Add/Edit/Delete Comment Form 
 
 *User Profile Views 
 
 *User Follow Toggle 
 
 ## Additions to Be Implemented: 
-1. Edit/Delete Photos
-2. Likes
-3. Main Feed 
-4. Photo Show into Modal 
-5. Nav Button to Photo Show 
-6. Infinite Scroll 
-7. User Profile Edit
-8. Nav Bar User Dropdown 
-9. User Search 
+
+0. DEMO USER!! 
+1. Likes
+2. Main Feed 
+---------------------------
+3. Nav Button to Photo Show 
+4. Infinite Scroll 
+5. User Profile Edit
+6. Nav Bar User Dropdown 
+7. User Search
+8. Edit/Delete Photos
