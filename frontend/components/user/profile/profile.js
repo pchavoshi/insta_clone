@@ -38,7 +38,7 @@ class Profile extends React.Component {
       );
     }
 
-    const photos = Object.values(this.props.photos);
+    const photos = this.props.photos;
     const photo_array = photos.map(photo => (
       <Link to={`/photos/${photo.id}`} key={photo.id}>
         <img src={photo.image} />
