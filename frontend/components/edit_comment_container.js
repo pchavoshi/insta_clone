@@ -6,7 +6,8 @@ import { editComment } from '../actions/comment_actions';
 
 const mSP = (state, ownProps) => {
   return {
-    formType: 'Edit Comment'
+    formType: 'Edit Comment',
+    comment: state.entities.comments[ownProps.match.params.commentId]
   };
 };
 

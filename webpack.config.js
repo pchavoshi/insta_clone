@@ -1,11 +1,11 @@
-var path = require("path");
+var path = require('path');
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/shiba_clone.jsx",
+  entry: './frontend/shiba_clone.jsx',
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
-    filename: "bundle.js"
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
@@ -14,13 +14,15 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['env', 'react']
+          presets: ['env', 'react'],
+
+          plugins: ['transform-object-rest-spread']
         }
       }
     ]
   },
   devtool: 'source-map',
   resolve: {
-    extensions: [".js", ".jsx", "*"]
+    extensions: ['.js', '.jsx', '*']
   }
 };

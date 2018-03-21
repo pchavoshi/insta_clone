@@ -2,19 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CommentIndexItem = props => {
-  let childComments;
-  if (props.props.child_comments) {
-    childComments = Object.values(props.props.child_comments).map(
-      child => child.content
-    );
-  } else {
-    childComments = null;
-  }
-
   return (
     <div>
-      {props.props.content}
-      {childComments}
+      {props.comment.content}
+      <Link to={`/comments/${props.comment.id}/edit`}>Edit Comment</Link>
     </div>
   );
 };

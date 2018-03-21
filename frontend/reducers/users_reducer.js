@@ -22,11 +22,6 @@ const usersReducer = (state = {}, action) => {
       const updatedUser = newState[action.photo.user_id];
       updatedUser.photo_ids.push(action.photo.id);
       return newState;
-    case RECEIVE_COMMENT:
-      newState = merge({}, state);
-      const userComment = newState[action.comment.user_id];
-      userComment.comment_ids.push(action.comment.id);
-      return newState;
     default:
       return state;
   }
