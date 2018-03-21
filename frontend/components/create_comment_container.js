@@ -14,7 +14,8 @@ const mSP = (state, ownProps) => {
 
 const mDP = dispatch => {
   return {
-    sendComment: comment => dispatch(makeComment(comment))
+    sendComment: comment => dispatch(makeComment(comment)), 
+    comment: {content: ''}
   };
 };
 

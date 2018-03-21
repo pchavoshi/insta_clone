@@ -1,6 +1,5 @@
 import React from 'react';
-import CommentIndex from './comment_index';
-import { CreateCommentContainer } from './create_comment_container';
+import CommentIndexContainer from './comment_index_container';
 
 class PhotoShow extends React.Component {
   componentDidMount() {
@@ -12,8 +11,7 @@ class PhotoShow extends React.Component {
       <div>
         <img src={this.props.photo.image} />
         <h1>Comments:</h1>
-        <CommentIndex comments={this.props.comments}/>
-        <CreateCommentContainer />
+        <CommentIndexContainer comments={this.props.comments}/>
       </div>
     );
   }

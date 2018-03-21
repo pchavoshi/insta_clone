@@ -8,6 +8,7 @@ const CommentIndexItem = props => {
     ownComment= 
     <div>
       <button onClick={props.deleteComment(props.comment.id)}>Delete </button>
+      <button onClick={props.openEdit(props.comment.id)}>Edit</button>
     </div>; 
    }
 
@@ -15,7 +16,6 @@ const CommentIndexItem = props => {
   return ( 
     <div>
       {props.comment.content}
-      <Link to={`/comments/${props.comment.id}/edit`}>Edit Comment</Link>
       {ownComment}
     </div>
   );
