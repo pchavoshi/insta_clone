@@ -6,7 +6,7 @@ import { getPhoto } from '../actions/photo_actions';
 const mSP = (state, ownProps) => {
   return {
     photo: state.entities.photos[ownProps.match.params.photoId],
-    comments: state.entities.comments
+    comments: Object.values(state.entities.comments)
   };
 };
 
