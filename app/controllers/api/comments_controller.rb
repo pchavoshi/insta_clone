@@ -2,7 +2,7 @@ class Api::CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      render 'api/comments/add'
+      render 'api/comments/show'
     else
       render json: @comment.errors.full_messages, status: 422
     end
@@ -11,14 +11,16 @@ class Api::CommentsController < ApplicationController
   def update
 
     @comment = Comment.find(params[:id])
+    @comment.update(comment_params)
     if @comment.save
-      render 'api/comments/add'
+      render 'api/comments/show'
     end
   end
 
   def destroy
-    comment = Comment.find(params[:id])
-    comment.destroy
+    @comment = Comment.find(params[:id])
+    render 'api/comments/show'
+    @comment.destroy
   end
 
 private

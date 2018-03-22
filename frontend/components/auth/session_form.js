@@ -35,47 +35,69 @@ class SessionForm extends React.Component {
     return (
       <div className="sessions">
         <div className="container">
-          <img src="https://www.t-mobile.com/content/dam/t-mobile/en-p/cell-phones/apple/apple-iphone-7-plus/gold/Apple-iPhone7-Plus-Gold-1-3x.jpg" />
-          <div className="session-bar">
-            <div className="session-container">
-              <h1>shiba-gram</h1>
+          <div className="box">
+            <img src="https://www.t-mobile.com/content/dam/t-mobile/en-p/cell-phones/apple/apple-iphone-7-plus/gold/Apple-iPhone7-Plus-Gold-1-3x.jpg" />
+          </div>
+          <div className="box">
+            <div className="main field">
+              {' '}
+              <div className=" session-bar">
+                <div className="session-container">
+                  <div className="top">
+                    <h1 className="title">shiba-gram</h1>
 
-              <p> {this.props.formType}</p>
-              {this.props.formType === 'Sign up' ? (
-                <p> to see photos and videos from your friends.</p>
-              ) : (
-                ''
-              )}
+                    <p className="text intro"> {this.props.formType}</p>
+                    {this.props.formType === 'Sign up' ? (
+                      <p> to see photos and videos from your friends.</p>
+                    ) : (
+                      ''
+                    )}
+                  </div>
 
-              <form onSubmit={this.handleSubmit}>
-                <div className="session-input">
-                  <input
-                    type="text"
-                    value={this.state.username}
-                    placeholder="Username"
-                    onChange={this.update('username')}
-                  />
+                  <div className="middle">
+                    <form onSubmit={this.handleSubmit}>
+                      <div className="session-input">
+                        <input
+                          className="txtField"
+                          type="text"
+                          value={this.state.username}
+                          placeholder="Username"
+                          onChange={this.update('username')}
+                        />
 
-                  <input
-                    type="password"
-                    value={this.state.password}
-                    placeholder="Password"
-                    onChange={this.update('password')}
-                  />
+                        <input
+                          className="txtField"
+                          type="password"
+                          value={this.state.password}
+                          placeholder="Password"
+                          onChange={this.update('password')}
+                        />
 
-                  <input type="submit" value={this.props.formType} />
+                        <input
+                          className="txtField"
+                          type="submit"
+                          value={this.props.formType}
+                        />
+                      </div>
+                    </form>
+
+                    {this.props.formType === 'Sign up' ? (
+                      <p className="text">
+                        By signing up, you agree that you are a Good Boy!{' '}
+                      </p>
+                    ) : (
+                      ''
+                    )}
+                    {this.renderErrors()}
+                  </div>
                 </div>
-              </form>
-
-              {this.props.formType === 'Sign up' ? (
-                <p>By signing up, you agree that you are a Good Boy! </p>
-              ) : (
-                ''
-              )}
-              {this.renderErrors()}
+              </div>
             </div>
-
-            {this.props.navLink}
+            <div className="sub field">
+              <div className="session-bar">
+                <div className="session-container">{this.props.navLink}</div>
+              </div>{' '}
+            </div>
           </div>
         </div>
       </div>

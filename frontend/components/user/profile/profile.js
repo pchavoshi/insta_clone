@@ -1,7 +1,5 @@
 import React from 'react';
 import { FollowToggleContainer } from '../follow_toggle';
-import { Link } from 'react-router-dom';
-import PhotoShowContainer from '../../photo_show_container';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -34,15 +32,15 @@ class Profile extends React.Component {
       user_button = <FollowToggleContainer user={this.props.user} />;
     } else {
       user_button = (
-        <button onClick={this.props.openModal('add_photo')}>Add Photo</button>
+        <button onClick={this.props.openModal({type: 'add_photo'})}>Add Photo</button>
       );
     }
 
-    const photos = Object.values(this.props.photos);
+    const photos = this.props.photos;
     const photo_array = photos.map(photo => (
-      <Link to={`/photos/${photo.id}`} key={photo.id}>
+      <button key={photo.id} onClick={this.props.openModal({type: 'show_photo', id: photo.id})} >
         <img src={photo.image} />
-      </Link>
+      </button>
     ));
 
     return (
