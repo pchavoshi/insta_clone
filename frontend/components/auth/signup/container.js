@@ -2,19 +2,21 @@ import SessionForm from '../session_form';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { signup } from '../../../actions/session_actions';
+import { login, signup, removeSessionErrors } from '../../../actions/session_actions';
 
 const mSP = state => {
   return {
     errors: state.errors.session,
-    formType: 'Sign up',
-    navLink: <Link to="/login">Already have an account? Log In</Link>
+    formType: 'Sign up'
   };
 };
 
 const mDP = dispatch => {
+  const demoUser = {username: 'parisa1', password: 'fruity'};
   return {
-    processForm: user => dispatch(signup(user))
+    processForm: user => dispatch(signup(user)),
+    removeSessionErrors: () => dispatch(removeSessionErrors()),
+    userDemo: () => dispatch(login(demoUser))
   };
 };
 
