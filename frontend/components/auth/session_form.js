@@ -36,7 +36,8 @@ class SessionForm extends React.Component {
     return (
       <div className="sessions">
         <div className="container">
-          <div className="box">
+          <img id="sakura" src={window.sakura} ></img>
+          <div className="box fone">
             <img src="https://www.t-mobile.com/content/dam/t-mobile/en-p/cell-phones/apple/apple-iphone-7-plus/gold/Apple-iPhone7-Plus-Gold-1-3x.jpg" />
           </div>
           <div className="box">
@@ -44,14 +45,13 @@ class SessionForm extends React.Component {
 
 
                   <div className="top">
-                    <h1 className="title">shiba-gram</h1>
+                    <img id="title" src={window.logo}></img>
 
-                    <p className="text intro"> {this.props.formType}</p>
-                    {this.props.formType === 'Sign up' ? (
-                      <p> to see photos and videos from your friends.</p>
-                    ) : (
-                      ''
-                    )}
+                  <div className="text intro">
+                    {this.props.formType === 'Sign up' ? <h2>Sign up to see photos and videos from your friends.</h2> : <p>Login</p>}
+                  </div>
+
+
                   </div>
 
                   <div className="middle">
@@ -73,6 +73,8 @@ class SessionForm extends React.Component {
                           onChange={this.update('password')}
                         />
 
+                      <button type="button" onClick={this.props.userDemo}>Demo Login</button>
+
                         <input
                           className="txtField"
                           type="submit"
@@ -83,19 +85,19 @@ class SessionForm extends React.Component {
 
                     {this.props.formType === 'Sign up' ? (
                       <p className="text">
-                        By signing up, you agree that you are a Good Boy!{' '}
+                        By signing up, you agree you are a Good Boy!
                       </p>
                     ) : (
                       ''
                     )}
                     {this.renderErrors()}
-                    <button type="button" onClick={this.props.userDemo}>DEMO USER</button>
+
                   </div>
             </div>
             <div className="sub field">
 
               <Link onClick={this.props.removeSessionErrors} to={ (this.props.formType === 'Sign up') ? '/login' : '/signup' }>
-                {this.props.formType === 'Sign up' ? 'Already have an account? Log In' : "Don't have an account? Sign Up"}
+                {this.props.formType === 'Sign up' ? 'Have an account? Log in' : "Don't have an account? Sign Up"}
               </Link>
 
             </div>

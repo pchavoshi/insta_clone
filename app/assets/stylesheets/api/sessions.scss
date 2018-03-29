@@ -7,30 +7,88 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: #466368;
+background: -webkit-linear-gradient(#E3A8B6, #FFFBFC);
+background:    -moz-linear-gradient(#E3A8B6, #FFFBFC);
+background:         linear-gradient(#E3A8B6, #FFFBFC);
+position: relative;
   }
 
   .box {
-    // width: 45%;
-    // margin: 5%;
-    background-color: #f0f;
-    height: 90%;
+    height: 700px;
+
+margin: 20px;
+  }
+
+  .text {
+    font-weight: 600;
+  line-height: 20px;
+  font-size: 17px;
+  margin: 0 40px 10px;
+  text-align: center;
   }
 
   .field {
-    margin: 5%;
-    background-color: #0f0;
+
+padding: 5%;
+    border: 1px solid #a9a9a9;
+    background: #fdfdfd;
+    border-radius: 2px;
+    box-sizing: border-box;
+    height: auto;
+    width: 350px;
   }
 
   .main {
-    height: 75%;
+    height: 670px;
+    padding: 10%;
+    margin-bottom: 20px;
   }
 
   .sub {
-    height: 10%;
+    padding: 5%;
   }
 
-  .container img {
-    width: auto;
-    height: 630px;
+.box img {
+  width: auto;
+       height: 95%;
+  position: relative;
+  z-index: 1;
+}
+
+.session-input * {
+  margin: 5px;
+}
+
+.top {
+  margin: 5px;
+  text-align: justify;
+display: flex;
+flex-direction: column;
+
+height: 30%;
+}
+  #sakura {
+    -moz-transform: scaleX(-1);
+          -o-transform: scaleX(-1);
+          -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+          filter: FlipH;
+          -ms-filter: "FlipH";
+          position: absolute;
+top: 0;
+left: 0;
+height: auto;
+width: auto;
+max-width: 35%;
+  }
+
+  .session-input {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fone {
+    padding-top: 70px
   }
 }
