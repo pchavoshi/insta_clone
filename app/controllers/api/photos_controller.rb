@@ -1,5 +1,14 @@
 class Api::PhotosController < ApplicationController
 
+  def index
+    @photos = Photo.where(user_id: params[following_id])
+    if @photos
+      render "api/photos/index"
+    else
+      render json: ["Photos cannot be found"]
+    end
+  end 
+
   def show
     @photo = Photo.find(params[:id])
     if @photo

@@ -9,7 +9,7 @@ namespace :api, defaults: {format: :json} do
 
   resource :session, only: [:create, :destroy]
 
-  resources :photos, only: [:create, :destroy, :update, :show] do
+  resources :photos, only: [:create, :destroy, :update, :show, :index] do
     resources :comments, only: [:create]
   end
 
