@@ -8,29 +8,54 @@
     align-items: center;
     height: 100vh;
     background: #466368;
-background: -webkit-linear-gradient(#E3A8B6, #FFFBFC);
-background:    -moz-linear-gradient(#E3A8B6, #FFFBFC);
-background:         linear-gradient(#E3A8B6, #FFFBFC);
-position: relative;
+    background: -webkit-linear-gradient(#e3a8b6, #fffbfc);
+    background: -moz-linear-gradient(#e3a8b6, #fffbfc);
+    background: linear-gradient(#e3a8b6, #fffbfc);
+    position: relative;
   }
 
   .box {
     height: 700px;
-
-margin: 20px;
+    margin: 25px;
   }
 
   .text {
     font-weight: 600;
-  line-height: 20px;
-  font-size: 17px;
-  margin: 0 40px 10px;
-  text-align: center;
+    line-height: 20px;
+    font-size: 17px;
+    margin: 0 40px 10px;
+    text-align: center;
+    color: #999999;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-shadow: 1px 1px 2px #f2efd2;
+  }
+
+  .errors {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    color: red;
+  }
+  .txtField {
+    width: auto;
+    min-height: 30px;
+    margin: 7px;
+    justify-content: space-around;
+    padding: 5px;
+    border: 1px solid #a9a9a9;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: #fafafa;
+    font-size: 13px;
+    font-family: 'Geneva';
+  }
+
+  .button {
+    background: #5396e9;
+    color: white;
   }
 
   .field {
-
-padding: 5%;
+    padding: 5%;
     border: 1px solid #a9a9a9;
     background: #fdfdfd;
     border-radius: 2px;
@@ -40,55 +65,60 @@ padding: 5%;
   }
 
   .main {
-    height: 670px;
+    height: 600px;
     padding: 10%;
-    margin-bottom: 20px;
+    margin: 33px 0px 20px 0px;
   }
 
   .sub {
     padding: 5%;
+    line-height: 30px;
+    text-align: center;
+    font-family: 'Geneva';
   }
 
-.box img {
-  width: auto;
-       height: 95%;
-  position: relative;
-  z-index: 1;
-}
+  .sub a {
+    text-decoration: none;
+    color: black;
+  }
 
-.session-input * {
-  margin: 5px;
-}
+  .box img {
+    width: auto;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+  }
 
-.top {
-  margin: 5px;
-  text-align: justify;
-display: flex;
-flex-direction: column;
+  .top {
+    margin: 5px 5px 35px 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+  }
 
-height: 30%;
-}
   #sakura {
     -moz-transform: scaleX(-1);
-          -o-transform: scaleX(-1);
-          -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-          filter: FlipH;
-          -ms-filter: "FlipH";
-          position: absolute;
-top: 0;
-left: 0;
-height: auto;
-width: auto;
-max-width: 35%;
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: 'FlipH';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: auto;
+    max-width: 35%;
   }
 
   .session-input {
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
   }
 
   .fone {
-    padding-top: 70px
+    padding-top: 70px;
   }
 }
