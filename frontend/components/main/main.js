@@ -1,5 +1,6 @@
 import React from "react";
 import PhotoShow from "../photo_index_item_container";
+import UserHeader from '../user_header';
 
 class Main extends React.Component {
   componentDidMount() {
@@ -16,17 +17,12 @@ class Main extends React.Component {
         }
       });
 
-      // let user = this.props.users[photo.user_id];
-      //   user={user}
+      let user = this.props.users[photo.user_id];
 
       return (
-        <div   key={photo.id}>
-          {" "}
-          <PhotoShow
-
-            photo={photo}
-            comments={commentArray}
-          />{" "}
+        <div key={photo.id}>
+          <UserHeader user={user} />
+          <PhotoShow photo={photo} comments={commentArray} />
         </div>
       );
     });
