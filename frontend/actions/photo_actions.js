@@ -3,6 +3,12 @@ import * as APIUtil from '../util/photo_api_util';
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
 export const DELETE_PHOTO = 'DELETE_PHOTO';
 export const RECEIVE_PHOTO_SHOW = 'RECEIVE_PHOTO_SHOW';
+export const RECEIVE_ALL_PHOTOS = 'RECEIVE_ALL_PHOTOS';
+
+export const receiveAllPhotos = payload => ({
+  type: RECEIVE_ALL_PHOTOS,
+  payload
+});
 
 export const receivePhoto = photo => ({
   type: RECEIVE_PHOTO,
@@ -18,6 +24,11 @@ export const receivePhotoShow = payload => ({
   type: RECEIVE_PHOTO_SHOW,
   payload
 });
+
+export const getAllPhotos = following_ids => dispatch =>
+  APIUtil.getPhotos(following_ids).then(payload =>
+    dispatch(receiveAllPhotos(payload))
+  );
 
 export const newPhoto = photo => dispatch =>
   APIUtil.makePhoto(photo).then(photo => dispatch(receivePhoto(photo)));

@@ -1,7 +1,8 @@
 import {
   RECEIVE_PHOTO,
   DELETE_PHOTO,
-  RECEIVE_PHOTO_SHOW
+  RECEIVE_PHOTO_SHOW,
+  RECEIVE_ALL_PHOTOS
 } from '../actions/photo_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
@@ -22,14 +23,16 @@ const photosReducer = (state = {}, action) => {
       const updatedPhoto = newState[action.comment.photo_id];
       updatedPhoto.comment_ids.push(action.comment.id);
       return newState;
-    case DELETE_COMMENT: 
-      newState = merge({}, state); 
-      delete newState[action.comment.photo_id].comment_ids[action.comment.id]; 
-      return newState; 
+    case DELETE_COMMENT:
+      newState = merge({}, state);
+      delete newState[action.comment.photo_id].comment_ids[action.comment.id];
+      return newState;
     case DELETE_PHOTO:
       newState = merge({}, state);
       delete newState[action.photoId];
       return newState;
+    case RECEIVE_ALL_PHOTOS:
+      return action.payload.photos;
     default:
       return state;
   }

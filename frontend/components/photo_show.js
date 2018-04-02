@@ -11,7 +11,10 @@ class PhotoShow extends React.Component {
       <div>
         <img src={this.props.photo.image} />
         <h1>Comments:</h1>
-        <CommentIndexContainer comments={this.props.comments} photoId={this.props.photo.id}/>
+        <CommentIndexContainer
+          comments={this.props.comments}
+          photoId={this.props.photo.id}
+        />
       </div>
     );
   }

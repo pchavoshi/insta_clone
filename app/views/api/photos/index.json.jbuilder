@@ -9,33 +9,8 @@
     end
 
     json.users do
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-s
-
-
-
-
-
-
-
-
-      302
       json.set! photo.user_id do
-        photo.user
+        json.partial! 'api/users/current_user', user: photo.user
       end
     end
 
