@@ -5,7 +5,19 @@ json.photo do
   end
 end
 
-# CODE TO USE IF IMPLEMENTING NESTED COMMENTS 
+json.comments do
+  if @photo.comments.empty?
+    json.null!
+  else
+    @photo.comments.each do |comment|
+      json.set! comment.id do
+        json.extract! comment, :id, :user_id, :photo_id, :content
+      end
+    end
+  end
+end  
+
+# CODE TO USE IF IMPLEMENTING NESTED COMMENTS
 # json.comments do
 #   if @photo.comments.empty?
 #     json.null!
