@@ -23,8 +23,9 @@ const CommentIndex = props => {
   }
 
   return (
-    <div className={props.commentIndex}>
+    <div className="comment-index">
       {commentsArray}
+      <hr />
       {commentForm}
     </div>
   );

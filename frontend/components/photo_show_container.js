@@ -4,9 +4,11 @@ import PhotoShow from './photo_show';
 import { getPhoto } from '../actions/photo_actions';
 
 const mSP = (state, ownProps) => {
+  const photoThis = state.entities.photos[ownProps.photoId];
   return {
-    photo: state.entities.photos[ownProps.photoId],
+    photo: photoThis,
     comments: Object.values(state.entities.comments),
+    photoUser: state.entities.users[photoThis.user_id],
     modal: state.ui.modal,
     photoShow: 'profile-photo-show',
     commentIndex: 'profile-comment-index',

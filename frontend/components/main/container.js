@@ -2,6 +2,7 @@ import React from 'react';
 import Main from './main';
 import { connect } from 'react-redux';
 import { getAllPhotos } from '../../actions/photo_actions';
+import { closeEdit } from '../../actions/edit_actions';
 
 const mSP = state => {
   return {
@@ -14,7 +15,8 @@ const mSP = state => {
 
 const mDP = dispatch => {
   return {
-    getAllPhotos: followingIds => dispatch(getAllPhotos(followingIds))
+    getAllPhotos: followingIds => dispatch(getAllPhotos(followingIds)),
+    closeEdit: e => dispatch(closeEdit())
   };
 };
 

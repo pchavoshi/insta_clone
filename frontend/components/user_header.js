@@ -4,13 +4,17 @@ import { Link } from 'react-router-dom';
 const UserHeader = props => {
   return (
     <div className="header">
-      <Link to={`/users/${props.user.id}`}>
-        <img className="profile-img" src={props.user.image} />
-      </Link>
+      <span>
+        <Link to={`/users/${props.user.id}`}>
+          <img className="profile-img" src={props.user.image} />
+        </Link>
+      </span>
 
-      <Link to={`/users/${props.user.id}`} className="profile-name">
-        {props.user.username}
-      </Link>
+      <span>
+        <Link to={`/users/${props.user.id}`} className="profile-name">
+          {props.user.username}
+        </Link>
+      </span>
     </div>
   );
 };

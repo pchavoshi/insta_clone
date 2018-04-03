@@ -8,13 +8,15 @@ class PhotoShow extends React.Component {
   }
 
   render() {
-    console.log('this.props:', this.props);
     return (
-      <div className={`${this.props.photoShow}`}>
-        <img src={this.props.photo.image} />
-        <img src={window.comment} />
-        <h3>{this.props.photo.caption}</h3>
-        <h1>Comments:</h1>
+      <div className="photo-show">
+        <img src={this.props.photo.image} className="photo" />
+        <img src={window.comment} className="icons" />
+        <div className="comment">
+          <span className="username">{this.props.photoUser.username}</span>
+          <span className="content">{this.props.photo.caption}</span>
+        </div>
+
         <CommentIndexContainer
           comments={this.props.comments}
           photoId={this.props.photo.id}

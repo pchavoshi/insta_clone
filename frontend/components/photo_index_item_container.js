@@ -7,6 +7,7 @@ const mSP = (state, ownProps) => {
   return {
     photo: ownProps.photo,
     comments: ownProps.comments,
+    photoUser: state.entities.users[ownProps.photo.user_id],
     modal: 'notModal',
     photoShow: 'main-photo-show',
     commentIndex: 'main-comment-index',
