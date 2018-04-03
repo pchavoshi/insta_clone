@@ -9,7 +9,9 @@ const mSP = (state, ownProps) => {
     currentUser: state.entities.users[state.session],
     isEdit: state.ui.commentEdit.isEdit,
     editId: state.ui.commentEdit.editId,
-    photoId: ownProps.photoId
+    photoId: ownProps.photoId,
+    commentIndex: ownProps.commentIndex,
+    indexItem: ownProps.indexItem
   };
 };
 

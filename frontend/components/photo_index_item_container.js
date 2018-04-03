@@ -7,9 +7,11 @@ const mSP = (state, ownProps) => {
   return {
     photo: ownProps.photo,
     comments: ownProps.comments,
-    modal: "notModal"
+    modal: 'notModal',
+    photoShow: 'main-photo-show',
+    commentIndex: 'main-comment-index',
+    indexItem: 'main-index-item'
   };
 };
-
 
 export default connect(mSP, null)(PhotoShow);

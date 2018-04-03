@@ -7,7 +7,10 @@ const mSP = (state, ownProps) => {
   return {
     photo: state.entities.photos[ownProps.photoId],
     comments: Object.values(state.entities.comments),
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    photoShow: 'profile-photo-show',
+    commentIndex: 'profile-comment-index',
+    indexItem: 'profile-index-item'
   };
 };
 

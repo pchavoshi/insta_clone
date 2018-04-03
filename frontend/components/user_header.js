@@ -1,12 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const UserHeader = props => {
   return (
-    <div>
-      <Link to={`/users/${props.user.id}`} ><img src={props.user.image} /></Link>
+    <div className="header">
+      <Link to={`/users/${props.user.id}`}>
+        <img className="profile-img" src={props.user.image} />
+      </Link>
 
-      <Link to={`/users/${props.user.id}`} >{props.user.username}</Link>
+      <Link to={`/users/${props.user.id}`} className="profile-name">
+        {props.user.username}
+      </Link>
     </div>
   );
 };

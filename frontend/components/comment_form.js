@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 class CommentForm extends React.Component {
-  constructor(props) {console.log("what is props", props)
+  constructor(props) {
     super(props);
     this.state = {
       content: ''
@@ -13,7 +13,7 @@ class CommentForm extends React.Component {
   }
 
   componentWillMount() {
-    this.setState({content: this.props.comment.content});
+    this.setState({ content: this.props.comment.content });
   }
 
   update(field) {

@@ -21,7 +21,7 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
       !loggedIn ? (
         <Redirect to="/signup" />
       ) : (
-        <div>
+        <div className="whole-screen">
           <Nav />
           <Component {...props} />
         </div>

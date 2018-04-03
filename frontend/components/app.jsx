@@ -8,7 +8,7 @@ import Modal from './modal';
 import PhotoShowContainer from './photo_show_container';
 
 const App = () => (
-  <div>
+  <div className="master">
     <Modal />
     <AuthRoute exact path="/login" component={Login} />
     <AuthRoute exact path="/signup" component={Signup} />

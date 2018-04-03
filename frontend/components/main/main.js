@@ -1,6 +1,6 @@
-import React from "react";
-import PhotoIndexItemContainer from "../photo_index_item_container";
-import UserHeader from "../user_header";
+import React from 'react';
+import PhotoIndexItemContainer from '../photo_index_item_container';
+import UserHeader from '../user_header';
 
 class Main extends React.Component {
   componentDidMount() {
@@ -20,8 +20,8 @@ class Main extends React.Component {
       let user = this.props.users[photo.user_id];
 
       return (
-        <div className="main">
-          <div key={photo.id} className="container">
+        <div key={photo.id} className="container">
+          <div className="photo-container">
             <UserHeader user={user} />
             <PhotoIndexItemContainer photo={photo} comments={commentArray} />
           </div>
@@ -30,9 +30,8 @@ class Main extends React.Component {
     });
 
     return (
-      <div>
-        <h1>i'm the main </h1>
-        {photoIndexItems}
+      <div className="main">
+        <div className="background">{photoIndexItems}</div>
       </div>
     );
   }
