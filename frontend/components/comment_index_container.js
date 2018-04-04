@@ -7,6 +7,8 @@ import { openEdit } from '../actions/edit_actions';
 const mSP = (state, ownProps) => {
   return {
     currentUser: state.entities.users[state.session],
+    comments: ownProps.comments,
+    allComments: state.entities.comments,
     isEdit: state.ui.commentEdit.isEdit,
     editId: state.ui.commentEdit.editId,
     photoId: ownProps.photoId,

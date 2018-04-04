@@ -15,8 +15,9 @@ const CommentIndex = props => {
     />
   ));
 
+  const editComment = props.allComments[props.editId];
   let commentForm;
-  if (props.isEdit) {
+  if (props.isEdit && editComment.photo_id === props.photoId) {
     commentForm = <EditCommentContainer editId={props.editId} />;
   } else {
     commentForm = <CreateCommentContainer photoId={props.photoId} />;
