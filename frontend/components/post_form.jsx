@@ -12,7 +12,7 @@ class PostForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+
   }
 
   handleSubmit(e) {
