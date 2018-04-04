@@ -10,19 +10,26 @@ class PhotoShow extends React.Component {
   render() {
     return (
       <div className="photo-show">
-        <img src={this.props.photo.image} className="photo" />
-        <img src={window.comment} className="icons" />
-        <div className="comment">
-          <span className="username">{this.props.photoUser.username}</span>
-          <span className="content">{this.props.photo.caption}</span>
-        </div>
+        <div className="container">
+          <img src={this.props.photo.image} className="photo" />
+          {this.props.modal === 'notModal' ? (
+            <img src={window.comment} className="icons" />
+          ) : (
+            ''
+          )}
 
-        <CommentIndexContainer
-          comments={this.props.comments}
-          photoId={this.props.photo.id}
-          commentIndex={this.props.commentIndex}
-          indexItem={this.props.indexItem}
-        />
+          <div className="comment">
+            <span className="username">{this.props.photoUser.username}</span>
+            <span className="content">{this.props.photo.caption}</span>
+          </div>
+          <CommentIndexContainer
+            comments={this.props.comments}
+            photoId={this.props.photo.id}
+            commentIndex={this.props.commentIndex}
+            indexItem={this.props.indexItem}
+            isModal={this.props.isModal}
+          />
+        </div>
       </div>
     );
   }

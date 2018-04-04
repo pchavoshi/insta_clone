@@ -32,7 +32,11 @@ const photosReducer = (state = {}, action) => {
       delete newState[action.photoId];
       return newState;
     case RECEIVE_ALL_PHOTOS:
-      return action.payload.photos;
+      if (action.payload.photos) {
+        return action.payload.photos;
+      } else {
+        return null;
+      }
     default:
       return state;
   }

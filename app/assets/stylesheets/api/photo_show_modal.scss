@@ -1,60 +1,25 @@
-// Place all the styles related to the api/comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 12;
+}
 
-.main {
-  .background {
-    background: #edc7cd;
-    padding-top: 150px;
-    padding-bottom: 150px;
-  }
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  .photo-container {
-    border: 1px solid #e6e6e6;
-    border-radius: 2px;
-    margin: auto;
-    width: 618px;
-    margin-bottom: 100px;
-    height: auto;
-    background: white;
-  }
-
-  .photo-area {
-    padding-left: 22px;
-  }
-
+.photo-show {
   .photo {
     width: 616px;
     margin-left: 1px;
     height: auto;
-  }
-
-  .profile-name {
-    color: #101010;
-    font-weight: 1000;
-    text-decoration: none;
-    text-shadow: 0 0 1px #f9f2ec;
-    font-family: 'Heebo', sans-serif;
-    font-size: 14px;
-  }
-
-  .header {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    height: 58px;
-  }
-
-  .header span {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  .profile-img {
-    border-radius: 50%;
-    height: 32px;
-    width: 32px;
-    margin: 12px 12px 12px 11px;
   }
 
   .icons {

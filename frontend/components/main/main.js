@@ -8,27 +8,35 @@ class Main extends React.Component {
   }
 
   render() {
-    const photos = Object.values(this.props.photos);
-    const photoIndexItems = photos.map(photo => {
-      let commentArray = [];
-      Object.values(this.props.comments).forEach(comment => {
-        if (photo.comment_ids.includes(comment.id)) {
-          commentArray.push(comment);
-        }
-      });
+    let photos;
+    let photoIndexItems;
+    if (this.props.photos) {
+      photos = Object.values(this.props.photos);
+      photoIndexItems = photos.map(photo => {
+        let commentArray = [];
+        Object.values(this.props.comments).forEach(comment => {
+          if (photo.comment_ids.includes(comment.id)) {
+            commentArray.push(comment);
+          }
+        });
 
-      let user = this.props.users[photo.user_id];
+        let user = this.props.users[photo.user_id];
 
-      return (
-        <div key={photo.id} className="container">
-          <div className="photo-container">
-            <UserHeader user={user} />
-            <PhotoIndexItemContainer photo={photo} comments={commentArray} />
+        return (
+          <div key={photo.id} className="container">
+            <div className="photo-area">
+              <div className="photo-container">
+                <UserHeader user={user} />
+                <PhotoIndexItemContainer
+                  photo={photo}
+                  comments={commentArray}
+                />
+              </div>
+            </div>
           </div>
-        </div>
-      );
-    });
-
+        );
+      });
+    }
     return (
       <div className="main">
         <div className="background">{photoIndexItems}</div>

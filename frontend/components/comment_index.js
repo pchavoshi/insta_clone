@@ -22,11 +22,19 @@ const CommentIndex = props => {
   } else {
     commentForm = <CreateCommentContainer photoId={props.photoId} />;
   }
-
+  console.log('ismodal:', props.isModal);
   return (
     <div className="comment-index">
       {commentsArray}
       <hr />
+      {props.isModal === true ? (
+        <div>
+          <img src={window.comment} className="icons" />
+          <hr />
+        </div>
+      ) : (
+        ''
+      )}
       {commentForm}
     </div>
   );

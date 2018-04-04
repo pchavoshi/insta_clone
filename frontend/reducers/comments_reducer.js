@@ -19,7 +19,11 @@ const commentsReducer = (state = {}, action) => {
       delete newState[action.comment.id];
       return newState;
     case RECEIVE_ALL_PHOTOS:
-      return action.payload.comments;
+      if (action.payload.comments) {
+        return action.payload.photos;
+      } else {
+        return null;
+      }
     default:
       return state;
   }

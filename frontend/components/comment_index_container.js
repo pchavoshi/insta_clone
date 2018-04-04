@@ -13,7 +13,8 @@ const mSP = (state, ownProps) => {
     editId: state.ui.commentEdit.editId,
     photoId: ownProps.photoId,
     commentIndex: ownProps.commentIndex,
-    indexItem: ownProps.indexItem
+    indexItem: ownProps.indexItem,
+    isModal: ownProps.isModal
   };
 };
 

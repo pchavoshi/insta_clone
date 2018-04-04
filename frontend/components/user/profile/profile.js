@@ -44,22 +44,36 @@ class Profile extends React.Component {
         key={photo.id}
         onClick={this.props.openModal({ type: 'show_photo', id: photo.id })}
       >
-        <img src={photo.image} />
+        <img src={photo.image} />{' '}
       </button>
     ));
 
     return (
-      <div>
-        <ul>
-          <img src={this.props.user.image} />
-          {this.props.user.username}
-          {this.props.user.user_blurb}
-          following: {this.state.followings.length}
-          followers: {this.state.followers.length}
-          posts: {this.state.posts.length}
-          {user_button}
-        </ul>
-        {photo_array}
+      <div className="profile">
+        <div className="container">
+          <div className="profile-info">
+            <img src={this.props.user.image} />
+            <div className="user-info">
+              <div className="top">
+                <span className="username-span" id="username">
+                  {this.props.user.username}
+                </span>
+                <span className="button-span">{user_button}</span>
+              </div>
+              <div className="middle">
+                <span className="bold">{this.state.posts.length} </span>
+                <span>posts</span>
+                <span className="bold">{this.state.followers.length} </span>
+                <span>followers</span>
+                <span className="bold">{this.state.followings.length} </span>
+                <span>following</span>
+              </div>
+              <div className="bottom"> {this.props.user.user_blurb} </div>
+            </div>
+          </div>
+          <hr />
+          <div className="photo-array">{photo_array}</div>
+        </div>
       </div>
     );
   }
