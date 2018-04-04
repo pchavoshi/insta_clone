@@ -7,7 +7,6 @@ end
 
 json.comments do
   if @photo.comments.empty?
-    json.null!
   else
     @photo.comments.each do |comment|
       json.set! comment.id do

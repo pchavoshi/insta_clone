@@ -8,7 +8,10 @@ const mSP = (state, ownProps) => {
   return {
     currentUser: state.entities.users[state.session],
     photo: state.entities.photos[ownProps.photoId],
-    formType: 'Add a comment...'
+    photoId: ownProps.photoId,
+    formType: 'Add a comment...',
+    modalBackground: "false",
+    modalChild: "false"
   };
 };
 

@@ -48,25 +48,37 @@ class CommentForm extends React.Component {
     this.setState({ content: '' });
   }
 
+    stopPropagation (e) {
+    e.stopPropagation();
+    }
+
   render() {
     return (
-      <div>
-        <form>
-          <input
-            className="comment-field"
-            type="textarea"
-            value={this.state.content}
-            placeholder={this.props.formType}
-            onChange={this.update('content')}
-          />
-          <input
-            className="comment-submit"
-            type="submit"
-            onClick={this.handleSubmit}
-            value={this.props.formType}
-          />
-        </form>
+      <div onClick={this.stopPropagation}>
+
+          <div className={this.props.modalChild} >
+          <div>
+          <form>
+            <input
+              id={this.props.photoId}
+              className="comment-field"
+              type="textarea"
+              value={this.state.content}
+              placeholder={this.props.formType}
+              onChange={this.update('content')}
+            />
+            <input
+              className="comment-submit"
+              type="submit"
+              onClick={this.handleSubmit}
+              value={this.props.formType}
+            />
+          </form>
+        </div>
+
+        </div>
       </div>
+
     );
   }
 }

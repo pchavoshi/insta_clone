@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .main {
+
   .background {
     background: #edc7cd;
     padding-top: 150px;
@@ -85,7 +86,7 @@
     display: inline-block;
     height: 100%;
     vertical-align: middle;
-    overflow: hidden;
+    word-wrap: break-word;
   }
   .comment-dropdown {
     display: inline-block;

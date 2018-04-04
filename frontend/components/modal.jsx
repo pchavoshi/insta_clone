@@ -3,6 +3,7 @@ import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreatePostContainer from './create_post_form_container';
 import PhotoShowContainer from './photo_show_container';
+import { closeEdit} from '../actions/edit_actions';
 
 
 function Modal({modal, closeModal}) {
@@ -22,7 +23,7 @@ function Modal({modal, closeModal}) {
   }
   return (
     <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
+      <div className="modal-child" onClick={e => {e.stopPropagation();  dispatch(closeEdit());}}>
         { component }
       </div>
     </div>

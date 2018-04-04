@@ -18,24 +18,31 @@ const CommentIndex = props => {
   const editComment = props.allComments[props.editId];
   let commentForm;
   if (props.isEdit && editComment.photo_id === props.photoId) {
-    commentForm = <EditCommentContainer editId={props.editId} />;
+    commentForm = <EditCommentContainer editId={props.editId} photoId={props.photoId}/>;
   } else {
     commentForm = <CreateCommentContainer photoId={props.photoId} />;
   }
-  console.log('ismodal:', props.isModal);
+
   return (
     <div className="comment-index">
-      {commentsArray}
+      <div>{commentsArray}</div>
+
+      <div className="bottom">
       <hr />
-      {props.isModal === true ? (
-        <div>
-          <img src={window.comment} className="icons" />
+      { props.isModal === 'true' ? (
+        <div className="modal-icon">
+          <label htmlFor={props.photoId}>
+            <img src={window.comment} className="icons" />
+          </label>
+
           <hr />
         </div>
       ) : (
         ''
-      )}
-      {commentForm}
+      ) }
+
+{commentForm}
+    </div>
     </div>
   );
 };

@@ -12,8 +12,6 @@ import { merge } from 'lodash';
 const photosReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
-    case RECEIVE_USER:
-      return action.payload.photos;
     case RECEIVE_PHOTO:
       return merge({}, state, { [action.photo.id]: action.photo });
     case RECEIVE_PHOTO_SHOW:
@@ -31,11 +29,12 @@ const photosReducer = (state = {}, action) => {
       newState = merge({}, state);
       delete newState[action.photoId];
       return newState;
+    case RECEIVE_USER:
     case RECEIVE_ALL_PHOTOS:
       if (action.payload.photos) {
         return action.payload.photos;
       } else {
-        return null;
+        return state;
       }
     default:
       return state;

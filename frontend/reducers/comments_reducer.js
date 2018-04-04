@@ -8,8 +8,6 @@ import { RECEIVE_COMMENT, DELETE_COMMENT } from '../actions/comment_actions';
 const commentsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
-    case RECEIVE_PHOTO_SHOW:
-      return action.payload.comments;
     case RECEIVE_COMMENT:
       return merge({}, state, {
         [action.comment.id]: action.comment
@@ -18,11 +16,12 @@ const commentsReducer = (state = {}, action) => {
       let newState = merge({}, state);
       delete newState[action.comment.id];
       return newState;
+    case RECEIVE_PHOTO_SHOW:
     case RECEIVE_ALL_PHOTOS:
       if (action.payload.comments) {
-        return action.payload.photos;
+        return action.payload.comments;
       } else {
-        return null;
+          return {};
       }
     default:
       return state;

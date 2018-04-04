@@ -44,18 +44,24 @@ class PostForm extends React.Component {
 
   render (){
     return (
-      <div>
-        <h1> {this.props.formType }</h1>
+      <div className="post-form">
+        <div className="container">
+        <h1> Add a Photo </h1>
 
-        <form>
 
-        <input type="text" value={this.state.caption} placeholder="Caption" onChange={this.update("caption")}/>
-        <input type="file" onChange={this.updateFile} />
-        <button type="button" onClick={this.handleSubmit}>{this.props.formType}</button>
         <img src={this.state.imageUrl} />
+        <form className="form">
+
+
+          <label htmlFor="choose-file" className="file-selection">Select a file</label>
+          <input type="file" id="choose-file" onChange={this.updateFile} />
+        <input type="text" value={this.state.caption} placeholder="Caption" onChange={this.update("caption")}/>
+        <button id="button" type="button" onClick={this.handleSubmit}>{this.props.formType}</button>
 
         </form>
       </div>
+      </div>
+
     );
   }
 }

@@ -11,7 +11,8 @@ const CommentIndexItem = props => {
             <button onClick={props.deleteComment(props.comment.id)}>
               Delete
             </button>
-            <button onClick={props.openEdit(props.comment.id)}>Edit</button>
+            <button onClick={(e) => {e.stopPropagation();
+                props.openEdit(props.comment.id)();}}>Edit</button>
           </div>
         </div>
       </div>

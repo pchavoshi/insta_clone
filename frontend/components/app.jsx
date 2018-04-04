@@ -6,9 +6,10 @@ import Profile from './user/profile';
 import Main from './main';
 import Modal from './modal';
 import PhotoShowContainer from './photo_show_container';
+import { closeEdit} from '../actions/edit_actions';
 
-const App = () => (
-  <div className="master">
+const App = ({store }) => (
+  <div className="master" onClick={() => dispatch(closeEdit())}>
     <Modal />
     <AuthRoute exact path="/login" component={Login} />
     <AuthRoute exact path="/signup" component={Signup} />
