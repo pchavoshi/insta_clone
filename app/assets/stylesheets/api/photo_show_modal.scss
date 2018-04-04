@@ -112,7 +112,11 @@
     display: inline-block;
     height: 100%;
     vertical-align: middle;
-    word-wrap: break-word;
+    width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
   }
   .comment-dropdown {
     display: inline-block;

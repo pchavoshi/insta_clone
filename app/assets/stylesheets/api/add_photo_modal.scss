@@ -5,11 +5,18 @@
     padding: 25px;
     border-radius: 2px;
     border: 1px solid #e6e6e6;
+
   }
 
   .form {
     display: flex;
     flex-direction: column;
+  }
+  .errors {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    color: red;
+    text-align: center
   }
 
   .form * {
@@ -49,5 +56,10 @@
   }
   .file-selection {
     cursor: pointer;
+  }
+
+  img {
+    max-width: 600px;
+    height: auto;
   }
 }

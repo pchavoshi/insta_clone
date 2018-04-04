@@ -12,6 +12,7 @@ class PostForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   handleSubmit(e) {
@@ -19,8 +20,7 @@ class PostForm extends React.Component {
     formData.append("photo[caption]", this.state.caption);
     formData.append('photo[image]', this.state.imageFile);
     formData.append('photo[user_id]', this.props.currentUser);
-    this.props.processForm(formData);
-    this.props.closeModal();
+    this.props.processForm(formData).then(this.props.closeModal);
   }
 
   update(field) {
@@ -53,12 +53,20 @@ class PostForm extends React.Component {
         <form className="form">
 
 
-          <label htmlFor="choose-file" className="file-selection">Select a file</label>
-          <input type="file" id="choose-file" onChange={this.updateFile} />
+          <label htmlFor="choose-file" className="file-selection">Select an image</label>
+          <input type="file" id="choose-file" onChange={this.updateFile} onClick={this.props.clearPhotoAddError}/>
         <input type="text" value={this.state.caption} placeholder="Caption" onChange={this.update("caption")}/>
         <button id="button" type="button" onClick={this.handleSubmit}>{this.props.formType}</button>
 
+
+
         </form>
+        <ul>
+          {this.props.errors.map((error, index) => (
+            <li className= "errors" key={`index`}>{error}</li>
+          ))}
+        </ul>
+
       </div>
       </div>
 

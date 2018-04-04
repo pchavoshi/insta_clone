@@ -16,7 +16,7 @@ const Nav = props => {
             <img src={window.user_icon} className="user-icon" />
             <div className="user-dropdown-contents">
               <div className="user-dropdown-links">
-                <Link to={`/users/${props.currentUser.id}`}>Profile</Link>
+                <Link className="profile-link" to={`/users/${props.currentUser.id}`}>Profile</Link>
                 <button onClick={props.logout}> Sign Out </button>
               </div>
             </div>
