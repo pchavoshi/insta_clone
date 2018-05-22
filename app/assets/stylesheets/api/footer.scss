@@ -1,0 +1,35 @@
+.footer {
+  position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #bfbcdb;
+border: 2px solid #b9aba2;
+   border-radius: 2px;
+
+
+}
+
+
+.credits {
+  display: flex;
+  flex-direction: row;
+  justify-content: center
+}
+
+
+.credits h1{
+font-size: 22px;
+font-weight: bold;
+font-family: 'Muli', sans-serif;
+ margin-top: 8px;
+ margin-right: 15px;
+ margin-left: 8px;
+
+
+}
+
+.credits img{
+  max-height: 22px;
+  margin: 8px 0px 8px 15px;
+}

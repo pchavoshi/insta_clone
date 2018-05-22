@@ -16,6 +16,7 @@ const App = ({store }) => (
     <ProtectedRoute exact path="/" component={Main} />
     <ProtectedRoute path="/users/:userId" component={Profile} />
     <ProtectedRoute path="/photos/:photoId" component={PhotoShowContainer} />
+
   </div>
 );
 
