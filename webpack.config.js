@@ -20,7 +20,7 @@ var prodPlugins = [
 if (env === 'production') {
   config.plugins.push(
     new webpack.IgnorePlugin(/redux-logger/)
-  )
+
 
 plugins = plugins.concat(
   process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
