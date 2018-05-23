@@ -17,9 +17,6 @@ var prodPlugins = [
   })
 ];
 
-if (env === 'production') {
-  config.plugins.push(
-    new webpack.IgnorePlugin(/redux-logger/)
 
 
 plugins = plugins.concat(
