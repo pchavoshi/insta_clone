@@ -29,8 +29,6 @@ const PhotoShow = props => {
           <CommentIndexContainer
             comments={props.comments}
             photoId={props.photo.id}
-            commentIndex={props.commentIndex}
-            indexItem={props.indexItem}
             isModal={props.isModal}
           />
         </div>

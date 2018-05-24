@@ -94,11 +94,14 @@
   }
 
   .comment {
-    margin: 6px;
     font-family: 'Muli', sans-serif;
     font-size: 14px;
     position: relative;
-        height: auto;
+    max-width: 610px;
+    padding: 2px 0;
+    border-left: 2px solid #fff;
+
+    margin: 0 60px 5px 5px;
   }
 
 .comment-index {
@@ -109,26 +112,23 @@
 }
 
   .content {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    width: 450px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    position:relative;
+    width: 100%;
+    height:1.25em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: normal;
+    display: inline;
+    left: 4px;
   }
 
-
-    .content:hover {
-        overflow:visible;
-    }
 
   .comment-dropdown {
     display: inline-block;
     vertical-align: middle;
     position: absolute;
     right: 0;
-    margin-right: 10px;
+    margin-right: -40px
   }
 
   .comment-dropdown-contents {

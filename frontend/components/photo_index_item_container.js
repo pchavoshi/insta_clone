@@ -10,9 +10,6 @@ const mSP = (state, ownProps) => {
     photoUser: state.entities.users[ownProps.photo.user_id],
     modal: 'notModal',
     isModal: 'false',
-    photoShow: 'main-photo-show',
-    commentIndex: 'main-comment-index',
-    indexItem: 'main-index-item'
   };
 };
 

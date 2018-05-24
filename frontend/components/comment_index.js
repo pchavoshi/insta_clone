@@ -6,7 +6,6 @@ import { EditCommentContainer } from './edit_comment_container';
 const CommentIndex = props => {
   const commentsArray = props.comments.map(comment => (
     <CommentIndexItem
-      indexItem={props.indexItem}
       comment={comment}
       currentUser={props.currentUser}
       deleteComment={props.deleteComment}

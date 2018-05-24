@@ -10,8 +10,6 @@ const mSP = (state, ownProps) => {
     photo: state.entities.photos[ownProps.photoId],
     photoId: ownProps.photoId,
     formType: 'Add a comment...',
-    modalBackground: "false",
-    modalChild: "false"
   };
 };
 

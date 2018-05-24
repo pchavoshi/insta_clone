@@ -19,9 +19,6 @@ const mSP = (state, ownProps) => {
     photoUser: state.entities.users[photoThis.user_id],
     modal: state.ui.modal,
     isModal: 'true',
-    photoShow: 'profile-photo-show',
-    commentIndex: 'profile-comment-index',
-    indexItem: 'profile-index-item'
   };
 };
 

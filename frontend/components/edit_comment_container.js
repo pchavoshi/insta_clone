@@ -9,8 +9,6 @@ const mSP = (state, ownProps) => {
   return {
     formType: 'Edit Comment',
     comment: state.entities.comments[ownProps.editId],
-    modalBackground: "comment-edit-background",
-    modalChild: "comment-edit-child",
     photoId: ownProps.photoId
   };
 };

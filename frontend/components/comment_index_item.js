@@ -22,7 +22,11 @@ const CommentIndexItem = props => {
   return (
     <div className="comment">
       <span className="username">{props.comment.username}</span>
-      <span className="content">{props.comment.content}</span>
+
+      <span className="content">
+        {props.comment.content}
+
+    </span>
 
       {ownComment}
     </div>

@@ -12,8 +12,6 @@ const mSP = (state, ownProps) => {
     isEdit: state.ui.commentEdit.isEdit,
     editId: state.ui.commentEdit.editId,
     photoId: ownProps.photoId,
-    commentIndex: ownProps.commentIndex,
-    indexItem: ownProps.indexItem,
     isModal: ownProps.isModal
   };
 };
