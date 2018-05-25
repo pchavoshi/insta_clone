@@ -1,43 +1,42 @@
 # Shiba-Gram 
-Shiba-Gram is an Instagram-inspired single page web app that allows users to share photos while being able to comment, follow, and like other users' content. 
+Shiba-Gram is an Instagram-inspired single page web app that allows users to share photos while being able to comment on and follow other users' content. 
+
+Check it out at https://shiba-gram.herokuapp.com. 
 
 ## Structure 
 
-The backend was developed using Ruby on Rails and a PostgreSQL database. Photo storage uses Amazon Web Services. The figaro gem allows for AWS secret key validations. 
+The backend was developed using Ruby on Rails and a PostgreSQL database. Photo are stored with AWS S3. 
 
-The frontend utilizes the React/Redux package. 
+The frontend utilizes React components with Redux state management. 
 
-## Main Views 
-
-
-
-
-
-
-## Implemented Features: 
+## Features: 
 *Sign Up/Login 
+
+Raw user passwords aren't saved to the database. BCrypt gem allows for password hash storage. 
+
+*Main Page 
+
+The main page displays a feed of all content from following accounts. 
 
 *User Profile Page 
 
+Users each have a profile page. Other users' profiles allow you to follow or unfollow their account using a folllow toggle button, which dynamically updates a user's follower number. This was achieved via a stateful component. 
+
+*Photo Show Modal 
+
+All modals were created with vanilla JavaScript. 
+
 *Add Photo Modal 
 
-*Photo Show Modal with Comments
+Photos are attached to models using the Paperclip gem. The figaro gem keeps AWS secret keys safe. 
 
 *Add/Edit/Delete Comment Form 
 
-*User Profile Views 
+A unique feature. Users are able to edit their comments. 
 
-*User Follow Toggle 
 
-## Additions to Be Implemented: 
+## Future Additions: 
 
-0. DEMO USER!! 
 1. Likes
-2. Main Feed 
----------------------------
-3. Nav Button to Photo Show 
-4. Infinite Scroll 
-5. User Profile Edit
-6. Nav Bar User Dropdown 
-7. User Search
-8. Edit/Delete Photos
+2. Infinite Scroll 
+3. User Search 
