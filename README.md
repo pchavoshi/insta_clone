@@ -16,13 +16,13 @@ The frontend utilizes React components with Redux state management.
 
 * User Profile Page 
 
-Users each have a profile page. Other users' profiles allow you to follow or unfollow their account using a folllow toggle button, which dynamically updates a user's follower number. This was achieved via a stateful component. 
+   Users each have a profile page. Other users' profiles allow you to follow or unfollow their account using a folllow toggle button, which dynamically updates a user's follower number. This was achieved via a stateful component. 
 
 * Photo Show Modal 
 
 * Add Photo Modal 
 
-All modals were created with vanilla JavaScript. Photos are attached using the Paperclip gem. The figaro gem keeps AWS secret keys safe. 
+   All modals were created with vanilla JavaScript. Photos are attached using the Paperclip gem. The figaro gem keeps AWS secret keys safe. 
 
 * Add/Edit/Delete Comment Form 
 
