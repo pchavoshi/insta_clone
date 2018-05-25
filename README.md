@@ -17,12 +17,20 @@ The frontend utilizes React components with Redux state management.
 * User Profile Page 
 
    Users each have a profile page. Other users' profiles allow you to follow or unfollow their account using a folllow toggle button, which dynamically updates a user's follower number. This was achieved via a stateful component. 
+   
+   ![alt text][logo]
+
+[logo]: https://github.com/pchavoshi/insta_clone/github_assets/profile_page_screenshot.png "User Profile"
 
 * Photo Show Modal 
 
 * Add Photo Modal 
 
    All modals were created with vanilla JavaScript. Photos are attached using the Paperclip gem. The figaro gem keeps AWS secret keys safe. 
+   
+   ![alt text][logo]
+
+[logo]: https://github.com/pchavoshi/insta_clone/github_assets/add_photo_screenshot.png "Add Photo Modal"
 
 * Add/Edit/Delete Comment Form 
 
