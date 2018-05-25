@@ -41,6 +41,10 @@
     right: 0;
   }
 
+  .user-dropdown img:hover {
+    cursor: pointer;
+  }
+
   .user-dropdown-contents {
     display: none;
     position: absolute;
