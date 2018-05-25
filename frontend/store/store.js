@@ -3,8 +3,16 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import {createStore, applyMiddleware} from 'redux';
 
-const configureStore = ( preloadedState = {} ) => {
-   return createStore(rootReducer, preloadedState, applyMiddleware(thunk, logger) )
- };
+let configureStore
+if (process.env.NODE_ENV !== 'production') {
+  configureStore = ( preloadedState = {} ) => {
+  return createStore(rootReducer, preloadedState, applyMiddleware(thunk, logger) )
+};
+
+} else {
+  configureStore = ( preloadedState = {} ) => {
+  return createStore(rootReducer, preloadedState, applyMiddleware(thunk) )
+};
+}
 
 export default configureStore;
