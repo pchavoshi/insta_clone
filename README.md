@@ -10,21 +10,21 @@ The backend was developed using Ruby on Rails and a PostgreSQL database. Photo a
 The frontend utilizes React components with Redux state management. 
 
 ## Features: 
-*Sign Up/Login 
+* Sign Up/Login 
 
-*Main Page 
+* Main Page 
 
-*User Profile Page 
+* User Profile Page 
 
 Users each have a profile page. Other users' profiles allow you to follow or unfollow their account using a folllow toggle button, which dynamically updates a user's follower number. This was achieved via a stateful component. 
 
-*Photo Show Modal 
+* Photo Show Modal 
 
-*Add Photo Modal 
+* Add Photo Modal 
 
 All modals were created with vanilla JavaScript. Photos are attached using the Paperclip gem. The figaro gem keeps AWS secret keys safe. 
 
-*Add/Edit/Delete Comment Form 
+* Add/Edit/Delete Comment Form 
 
 
 ## Future Additions: 
