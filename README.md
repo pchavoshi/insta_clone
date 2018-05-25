@@ -22,7 +22,7 @@ Users each have a profile page. Other users' profiles allow you to follow or unf
 
 *Add Photo Modal 
 
-All modals were created with vanilla JavaScript. Photos are attached to models using the Paperclip gem. The figaro gem keeps AWS secret keys safe. 
+All modals were created with vanilla JavaScript. Photos are attached using the Paperclip gem. The figaro gem keeps AWS secret keys safe. 
 
 *Add/Edit/Delete Comment Form 
 
