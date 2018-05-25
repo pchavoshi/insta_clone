@@ -20,7 +20,7 @@ The frontend utilizes React components with Redux state management.
    
    ![alt text][logo]
 
-[logo]: https://github.com/pchavoshi/insta_clone/github_assets/profile_page_screenshot.png "User Profile"
+[logo]: https://github.com/pchavoshi/insta_clone/blob/master/github_assets/profile_page_screenshot.png "User Profile"
 
 * Photo Show Modal 
 
@@ -30,7 +30,7 @@ The frontend utilizes React components with Redux state management.
    
    ![alt text][logo]
 
-[logo]: https://github.com/pchavoshi/insta_clone/github_assets/add_photo_screenshot.png "Add Photo Modal"
+[logo]: https://github.com/pchavoshi/insta_clone/blob/master/github_assets/add_photo_screenshot.png "Add Photo Modal"
 
 * Add/Edit/Delete Comment Form 
 
