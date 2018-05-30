@@ -46,8 +46,9 @@
   .profile-img {
     border-radius: 50%;
     height: 50px;
-        width: 50px;
-        margin: 20px 20px 12px 11px;
+    width: 50px;
+    margin: 20px 20px 12px 11px;
+    cursor: default
   }
 
   .profile-name {
@@ -57,6 +58,7 @@
     text-shadow: 0 0 1px #f9f2ec;
     font-family: 'Muli', sans-serif;
     font-size: 18px;
+    cursor: default
   }
 
   .allComments {

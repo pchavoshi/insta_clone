@@ -22,10 +22,17 @@ const PhotoShow = props => {
           ) : (
             ''
           )}
-          <div className="comment">
-            <span className="username">{props.photoUser.username}</span>
-            <span className="content">{props.photo.caption}</span>
-          </div>
+
+          {props.photo.caption ? (
+
+            <div className="comment">
+              <span className="username">{props.photoUser.username}</span>
+              <span className="content">{props.photo.caption}</span>
+            </div>
+          ) : (
+            ''
+          )}
+
           <CommentIndexContainer
             comments={props.comments}
             photoId={props.photo.id}

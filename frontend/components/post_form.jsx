@@ -74,7 +74,5 @@ class PostForm extends React.Component {
   }
 }
 
-//can the image source field be selectively disabled based on the form type?
-//maybe classname={formType}, disabled if formType = editPost
 
 export default PostForm;
