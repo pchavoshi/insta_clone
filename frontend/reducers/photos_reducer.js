@@ -34,7 +34,7 @@ const photosReducer = (state = {}, action) => {
       if (action.payload.photos) {
         return action.payload.photos;
       } else {
-        return state;
+        return {};
       }
     default:
       return state;

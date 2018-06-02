@@ -39,11 +39,19 @@
     box-shadow: 1px 1px 3px #b3b3b3;
   }
 
-  #button {
+  .button {
     margin-top: 18px;
     font-size: 14px;
-    font-family: 'Geneva';
   }
+
+  .button:hover {
+    cursor: pointer
+  }
+
+#disabled:hover {
+background: #fafafa;
+cursor: not-allowed
+}
 
   #choose-file {
     display: none;

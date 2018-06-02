@@ -56,16 +56,18 @@ class PostForm extends React.Component {
           <label htmlFor="choose-file" className="file-selection">Select an image</label>
           <input type="file" id="choose-file" onChange={this.updateFile} onClick={this.props.clearPhotoAddError}/>
         <input type="text" value={this.state.caption} placeholder="Caption" onChange={this.update("caption")}/>
-        <button id="button" type="button" onClick={this.handleSubmit}>{this.props.formType}</button>
+
+        {this.state.imageFile === "" ?
+         <button className="button" id="disabled"  type="button"  disabled>{this.props.formType}</button>
+          :
+        <button className="button" type="button" onClick={this.handleSubmit}>{this.props.formType}</button> }
+
+
 
 
 
         </form>
-        <ul>
-          {this.props.errors.map((error, index) => (
-            <li className= "errors" key={`index`}>{error}</li>
-          ))}
-        </ul>
+
 
       </div>
       </div>
