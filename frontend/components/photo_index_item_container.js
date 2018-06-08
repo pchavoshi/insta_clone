@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PhotoShow from './photo_show';
 import { getPhoto } from '../actions/photo_actions';
 
+
 const mSP = (state, ownProps) => {
   return {
     photo: ownProps.photo,
@@ -10,6 +11,7 @@ const mSP = (state, ownProps) => {
     photoUser: state.entities.users[ownProps.photo.user_id],
     modal: 'notModal',
     isModal: 'false',
+
   };
 };
 

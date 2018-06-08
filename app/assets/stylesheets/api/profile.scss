@@ -66,7 +66,8 @@
   }
 
   .profile-info button {
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    border-color: #DADADA;
+    border-style: solid;
     margin-bottom: 10px;
     border-radius: 4px;
     font-size: 14px;
@@ -83,7 +84,11 @@
 
   .profile-info button:focus {
     outline: none;
-    box-shadow: 1px 1px 3px #b3b3b3;
+  }
+
+  #not_followed {
+    background-color: #52a902;
+    font-weight: 500
   }
 
   .user-info * {
@@ -93,7 +98,7 @@
   }
 
   .bold {
-    font-weight: bolder;
+    font-weight: 600;
     margin-left: 18px;
   }
 

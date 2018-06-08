@@ -7,6 +7,7 @@ const PhotoShow = props => {
       <div  className="photo-show">
         <div className="container">
           <img src={props.photo.image} className="photo" />
+          <button type="button"> X </button>
           {props.modal === 'notModal' ? (
             <label htmlFor={props.photo.id}>
               <img src={window.comment} className="icons" />

@@ -36,8 +36,11 @@ class FollowToggle extends React.Component {
   }
 
   render () {
-    return <button onClick={this.handleClick}>
-      {this.state.follow_state}
+
+    let follow_state = this.state.follow_state
+
+    return <button id={(follow_state === "Follow") ? "not_followed" : "following" } onClick={this.handleClick}>
+      {follow_state}
     </button>;
   }
 
