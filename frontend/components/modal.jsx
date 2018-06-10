@@ -17,7 +17,7 @@ function Modal({modal, closeModal}) {
       component = <CreatePostContainer />;
       break;
     case 'show_photo':
-      component = <PhotoShowContainer photoId={modal.id} is_self={modal.is_self}/>;
+      component = <PhotoShowContainer photoId={modal.id} />;
       break;
     case 'delete_photo':
       component = <DeletePhoto photoId={modal.id}/>;

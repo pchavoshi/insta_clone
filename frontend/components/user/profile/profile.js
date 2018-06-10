@@ -31,7 +31,7 @@ class Profile extends React.Component {
 return this.props.currentUser.id == this.props.user.id
   }
 
-  render() { 
+  render() {
     let user_button;
     if (!(this.is_self())) {
       user_button = <FollowToggleContainer user={this.props.user} />;
@@ -47,7 +47,7 @@ return this.props.currentUser.id == this.props.user.id
     const photo_array = photos.map(photo => (
       <button
         key={photo.id}
-        onClick={this.props.openModal({ type: 'show_photo', id: photo.id, is_self: this.is_self() })}
+        onClick={this.props.openModal({ type: 'show_photo', id: photo.id })}
       >
         <img src={photo.image} />{' '}
       </button>

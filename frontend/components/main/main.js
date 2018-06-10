@@ -7,7 +7,7 @@ class Main extends React.Component {
     this.props.getAllPhotos(this.props.currentUser.followings);
   }
 
-  render() { console.log("this.props.currentUser.followings:", this.props.currentUser.followings)
+  render() { 
     let photos;
     let photoIndexItems;
     if (this.props.photos) {

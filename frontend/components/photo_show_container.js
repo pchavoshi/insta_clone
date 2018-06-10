@@ -17,6 +17,7 @@ const mSP = (state, ownProps) => {
     photo: photoThis,
     comments: commentArray,
     photoUser: state.entities.users[photoThis.user_id],
+    currentUser: state.entities.users[state.session], 
     modal: state.ui.modal,
     isModal: true,
     isSelf: ownProps.is_self
