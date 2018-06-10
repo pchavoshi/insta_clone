@@ -1,9 +1,10 @@
 import React from 'react';
-import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
+import { closeModal } from '../actions/modal_actions';
+import { closeEdit} from '../actions/edit_actions';
 import CreatePostContainer from './create_post_form_container';
 import PhotoShowContainer from './photo_show_container';
-import { closeEdit} from '../actions/edit_actions';
+import DeletePhoto from './delete_photo';
 
 
 function Modal({modal, closeModal}) {
@@ -16,7 +17,10 @@ function Modal({modal, closeModal}) {
       component = <CreatePostContainer />;
       break;
     case 'show_photo':
-      component = <PhotoShowContainer photoId={modal.id}/>;
+      component = <PhotoShowContainer photoId={modal.id} is_self={modal.is_self}/>;
+      break;
+    case 'delete_photo':
+      component = <DeletePhoto photoId={modal.id}/>;
       break;
     default:
       return null;

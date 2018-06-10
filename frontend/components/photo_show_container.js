@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PhotoShow from './photo_show';
-import { getPhoto } from '../actions/photo_actions';
+import { openModal } from '../actions/modal_actions'
 
 const mSP = (state, ownProps) => {
   const photoThis = state.entities.photos[ownProps.photoId];
@@ -18,13 +18,14 @@ const mSP = (state, ownProps) => {
     comments: commentArray,
     photoUser: state.entities.users[photoThis.user_id],
     modal: state.ui.modal,
-    isModal: 'true',
+    isModal: true,
+    isSelf: ownProps.is_self
   };
 };
 
 const mDP = dispatch => {
   return {
-    getPhoto: photoId => dispatch(getPhoto(photoId))
+    openModal: modal => dispatch(openModal(modal))
   };
 };
 

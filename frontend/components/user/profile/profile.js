@@ -5,6 +5,7 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = { followings: [], followers: [], posts: [] };
+    this.is_self = this.is_self.bind(this)
   }
 
   componentDidMount() {
@@ -26,9 +27,13 @@ class Profile extends React.Component {
     }
   }
 
-  render() {
+  is_self() {
+return this.props.currentUser.id == this.props.user.id
+  }
+
+  render() { 
     let user_button;
-    if (this.props.currentUser.id != this.props.user.id) {
+    if (!(this.is_self())) {
       user_button = <FollowToggleContainer user={this.props.user} />;
     } else {
       user_button = (
@@ -42,7 +47,7 @@ class Profile extends React.Component {
     const photo_array = photos.map(photo => (
       <button
         key={photo.id}
-        onClick={this.props.openModal({ type: 'show_photo', id: photo.id })}
+        onClick={this.props.openModal({ type: 'show_photo', id: photo.id, is_self: this.is_self() })}
       >
         <img src={photo.image} />{' '}
       </button>

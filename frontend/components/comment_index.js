@@ -28,7 +28,7 @@ const CommentIndex = props => {
 
       <div className="bottom">
       <hr />
-      { props.isModal === 'true' ? (
+      { props.isModal === true ? (
         <div className="modal-icon">
           <label htmlFor={props.photoId}>
             <img src={window.comment} className="icons" />

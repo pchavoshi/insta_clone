@@ -30,6 +30,29 @@
     height: 600px;
   }
 
+  .delete-button {
+    position: absolute;
+
+  cursor:pointer;
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 8px;
+  max-width: 200px;
+  background: #fff; /* fallback color for old browsers */background: rgba(152,152,152,.5);
+  border-radius: 3px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+  font-size: 14px
+  }
+
+  .delete-button:hover {
+    background: rgba(152,152,152,1)
+  }
+
   .header {
     display: inline-block;
     height: 100%;
