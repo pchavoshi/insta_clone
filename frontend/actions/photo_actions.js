@@ -17,9 +17,9 @@ export const receivePhoto = photo => ({
   photo
 });
 
-export const removePhoto = photoId => ({
+export const removePhoto = payload => ({
   type: DELETE_PHOTO,
-  photoId
+  payload
 });
 
 export const receivePhotoShow = payload => ({
@@ -51,4 +51,4 @@ export const getPhoto = photoId => dispatch =>
   );
 
 export const deletePhoto = photoId => dispatch =>
-  APIUtil.deletePhoto(photoId).then(photo => dispatch(removePhoto(photoId)));
+  APIUtil.deletePhoto(photoId).then(payload => dispatch(removePhoto(payload)));

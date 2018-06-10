@@ -38,9 +38,10 @@ class Api::PhotosController < ApplicationController
   end
 
   def destroy
-    photo = Photo.find(params[:id])
-
-    photo.destroy
+    @photo = Photo.find(params[:id])
+    @user = current_user
+    @photo.destroy
+    render "api/photos/delete"
 
   end
 
