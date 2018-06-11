@@ -20,7 +20,7 @@ const mDP = dispatch => {
   return {
     getUser: userId => dispatch(getUser(userId)),
     openModal: modal => {
-      return () => dispatch(openModal(modal));
+      return e => dispatch(openModal(modal));
     }
   };
 };

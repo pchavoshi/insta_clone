@@ -1,0 +1,253 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 12;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-child {
+
+  .photo-show {
+
+
+  .container {
+    background: white;
+    display: flex;
+    border-radius: 2px;
+  }
+  .photo {
+    object-fit: cover;
+    width: 600px;
+    height: 600px;
+  }
+
+  .delete-button {
+    position: absolute;
+
+  cursor:pointer;
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 8px;
+  max-width: 200px;
+  background: #fff; /* fallback color for old browsers */background: rgba(152,152,152,.5);
+  border-radius: 3px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+  font-size: 14px
+  }
+
+  .delete-button:hover {
+    background: rgba(152,152,152,1)
+  }
+
+.nav-button button {
+  font-size: 25px;
+  border-radius: 2px;
+  border: 2px solid grey
+}
+
+.nav-button button:hover {
+  cursor: pointer
+}
+
+  .next {
+  position: absolute;
+  right: -35px;
+  top: 45%
+  }
+
+  .prev {
+    position: absolute;
+    left: -35px;
+    top: 45%
+  }
+
+
+  .header {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    height: 58px;
+    margin-bottom: 16px
+  }
+
+  .header span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .profile-img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 20px 20px 12px 11px;
+    cursor: default
+  }
+
+  .profile-name {
+    color: #101010;
+    font-weight: 1000;
+    text-decoration: none;
+    text-shadow: 0 0 1px #f9f2ec;
+    font-family: 'Muli', sans-serif;
+    font-size: 18px;
+    cursor: default
+  }
+
+  .allComments {
+    height: 600px;
+    width: 380px;
+
+    .container {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      height: 100%
+    }
+  }
+
+  .photo-bar {
+    margin-bottom: 8px
+  }
+
+  .icons {
+    height: 45px;
+    width: auto;
+    margin-left: -2px;
+    margin-top: -3px;
+    margin-bottom: -14px;
+  }
+
+.icons:hover {
+  cursor: pointer;
+}
+
+  .username {
+    padding-left: 4px;
+    padding-right: 6px;
+    color: #101010;
+    font-weight: 1000;
+    font-family: 'Muli', sans-serif;
+    font-size: 14px;
+  }
+
+  .comment {
+    font-family: 'Muli', sans-serif;
+    font-size: 14px;
+    position: relative;
+    max-width: 610px;
+    padding: 2px 0;
+    border-left: 2px solid #fff;
+
+    margin: 0 60px 5px 5px;
+  }
+
+.comment-index {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+  .content {
+    position:relative;
+    width: 100%;
+    height:1.25em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: normal;
+    display: inline;
+    left: 4px;
+  }
+
+
+  .comment-dropdown {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    right: 0;
+    margin-right: -40px
+  }
+
+  .comment-dropdown-contents {
+    display: none;
+    position: absolute;
+    background-color: #fafafa;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .comment-dropdown-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .comment-dropdown-buttons button {
+    font-size: 15px;
+    font-family: 'Geneva';
+    border: none;
+    border-radius: 2px;
+    background: #fafafa;
+    padding: 2px;
+  }
+  .comment-dropdown-buttons button:hover {
+    background: #e6e6e6;
+  }
+
+  .comment-dropdown-buttons button:focus {
+    outline: none;
+    box-shadow: 1px 1px 3px #b3b3b3;
+  }
+
+  .comment-dropdown:hover .comment-dropdown-contents {
+    display: block;
+  }
+
+  .comment-dropdown img {
+    height: 14px;
+    width: auto;
+  }
+
+  .comment-submit {
+    display: none;
+  }
+
+  .comment-field {
+    border: none;
+    padding: 10px;
+    font-size: 12px;
+    font-family: 'Muli', sans-serif;
+    width: 300px;
+    height: 27px;
+  }
+
+  .comment-field:focus {
+    outline: none;
+  }
+
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #e6e6e6;
+    margin: 15px 15px 0px 9px;
+    padding: 0;
+  }
+  }
+}

@@ -8,7 +8,8 @@ import { closeEdit } from '../actions/edit_actions';
 const mSP = (state, ownProps) => {
   return {
     formType: 'Edit Comment',
-    comment: state.entities.comments[ownProps.editId]
+    comment: state.entities.comments[ownProps.editId],
+    photoId: ownProps.photoId
   };
 };
 

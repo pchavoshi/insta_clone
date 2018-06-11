@@ -7,24 +7,37 @@ end
 
 json.comments do
   if @photo.comments.empty?
-    json.null!
   else
     @photo.comments.each do |comment|
-    next if comment.comment_parent_id != nil
       json.set! comment.id do
         json.extract! comment, :id, :user_id, :photo_id, :content
-        json.child_comments do
-          if comment.child_comments.empty?
-            json.null!
-          else
-            comment.child_comments.each do |child_comment|
-              json.set! child_comment.id do
-                json.extract! child_comment, :id, :user_id, :photo_id, :content, :comment_parent_id
-          end
-          end
-          end
-        end
-end
+        json.username comment.user.username
+      end
     end
   end
 end
+
+# CODE TO USE IF IMPLEMENTING NESTED COMMENTS
+# json.comments do
+#   if @photo.comments.empty?
+#     json.null!
+#   else
+#     @photo.comments.each do |comment|
+#     next if comment.comment_parent_id != nil
+#       json.set! comment.id do
+#         json.extract! comment, :id, :user_id, :photo_id, :content
+#         json.child_comments do
+#           if comment.child_comments.empty?
+#             json.null!
+#           else
+#             comment.child_comments.each do |child_comment|
+#               json.set! child_comment.id do
+#                 json.extract! child_comment, :id, :user_id, :photo_id, :content, :comment_parent_id
+#           end
+#           end
+#           end
+#         end
+# end
+#     end
+#   end
+# end

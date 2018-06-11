@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 class CommentForm extends React.Component {
-  constructor(props) {console.log("what is props", props)
+  constructor(props) {
     super(props);
     this.state = {
       content: ''
@@ -13,7 +13,7 @@ class CommentForm extends React.Component {
   }
 
   componentWillMount() {
-    this.setState({content: this.props.comment.content});
+    this.setState({ content: this.props.comment.content });
   }
 
   update(field) {
@@ -48,21 +48,37 @@ class CommentForm extends React.Component {
     this.setState({ content: '' });
   }
 
+    stopPropagation (e) {
+    e.stopPropagation();
+    }
+
   render() {
     return (
-      <div>
-        <form>
-          <input
-            type="text"
-            value={this.state.content}
-            placeholder={this.props.formType}
-            onChange={this.update('content')}
-          />
-          <button type="button" onClick={this.handleSubmit}>
-            {this.props.formType}
-          </button>
-        </form>
+      <div onClick={this.stopPropagation}>
+
+          <div className={this.props.modalChild} >
+          <div>
+          <form>
+            <input
+              id={this.props.photoId}
+              className="comment-field"
+              type="textarea"
+              value={this.state.content}
+              placeholder={this.props.formType}
+              onChange={this.update('content')}
+            />
+            <input
+              className="comment-submit"
+              type="submit"
+              onClick={this.handleSubmit}
+              value={this.props.formType}
+            />
+          </form>
+        </div>
+
+        </div>
       </div>
+
     );
   }
 }

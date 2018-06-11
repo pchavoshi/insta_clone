@@ -1,8 +1,9 @@
 import { merge } from 'lodash';
 import { RECEIVE_USER, RECEIVE_USER_UNFOLLOW } from '../actions/user_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_PHOTO } from '../actions/photo_actions';
+import { RECEIVE_PHOTO, RECEIVE_ALL_PHOTOS } from '../actions/photo_actions';
 import { RECEIVE_COMMENT } from '../actions/comment_actions';
+import { DELETE_PHOTO } from '../actions/photo_actions'
 
 const usersReducer = (state = {}, action) => {
   let newState;
@@ -22,6 +23,14 @@ const usersReducer = (state = {}, action) => {
       const updatedUser = newState[action.photo.user_id];
       updatedUser.photo_ids.push(action.photo.id);
       return newState;
+    case DELETE_PHOTO:
+      newState = merge({}, state);
+     const currentuser = newState[action.payload.user.id];
+      const index = currentuser.photo_ids.indexOf(action.payload.photo.id);
+      currentuser.photo_ids.splice(index, 1);
+      return newState;
+    case RECEIVE_ALL_PHOTOS:
+      return merge({}, state, action.payload.users);
     default:
       return state;
   }

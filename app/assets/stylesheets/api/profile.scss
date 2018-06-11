@@ -1,0 +1,134 @@
+// Place all the styles related to the api/photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.profile {
+  .container {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background: #edc7cd;
+    text-align: center;
+    min-height: 100vH
+  }
+
+  .profile-info img {
+    border-radius: 50%;
+    height: 175px;
+    width: 175px;
+    margin-right: auto;
+    margin-left: 90px;
+    border: 1px solid #b8b8b8;
+  }
+
+  .profile-info {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    width: 700px;
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    justify-content: center;
+    padding: 6px;
+  }
+
+  .user-info div {
+    margin: 8px;
+  }
+
+  #username {
+    font-size: 32px;
+    font-family: 'Muli', sans-serif;
+    margin-right: 30px;
+    text-shadow: 0 0 1px #f9f2ec;
+  }
+
+  .top span {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .username-span {
+    width: 100px;
+    margin-left: 24px;
+  }
+  .button-span {
+    padding-top: 15px;
+    width: 120px;
+  }
+
+  .button-span button:hover {
+    cursor: pointer
+  }
+
+  .profile-info button {
+    border-color: #DADADA;
+    border-style: solid;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Geneva';
+    background: #fafafa;
+    padding-top: 5px;
+    width: 100px;
+    padding-bottom: 3px
+  }
+
+  .profile-info button:hover {
+    background: #e6e6e6;
+  }
+
+  .profile-info button:focus {
+    outline: none;
+  }
+
+  #not_followed {
+    background-color: #52a902;
+    font-weight: 500
+  }
+
+  .user-info * {
+    font-family: 'Muli', sans-serif;
+    font-size: 16px;
+    text-shadow: 0 0 1px #f9f2ec;
+  }
+
+  .bold {
+    font-weight: 600;
+    margin-left: 18px;
+  }
+
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #b8b8b8;
+    padding-bottom: 40px;
+    width: 740px;
+  }
+
+  .photo-array img {
+    object-fit: cover;
+    width: 230px;
+    height: 230px;
+  }
+
+  .photo-array button {
+    width: 230px;
+    height: 230px;
+    margin: 12px;
+    cursor: pointer;
+  }
+
+  .photo-array {
+    display: flex;
+    flex-wrap: wrap;
+    width: 764px;
+    margin: auto;
+  }
+
+}

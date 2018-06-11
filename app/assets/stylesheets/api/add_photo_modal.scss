@@ -1,0 +1,73 @@
+.post-form {
+  .container {
+    background: white;
+    min-width: 80px;
+    padding: 25px;
+    border-radius: 2px;
+    border: 1px solid #e6e6e6;
+
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  .errors {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    color: red;
+    text-align: center
+  }
+
+  .form * {
+    margin: 6px;
+    padding: 5px;
+    border-radius: 2px;
+    background: #fafafa;
+      font-family: 'Muli', sans-serif;
+    font-size: 13px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #e6e6e6;
+  }
+
+  .form *:hover {
+    background: #e6e6e6;
+  }
+
+  .form *:focus {
+    outline: none;
+    box-shadow: 1px 1px 3px #b3b3b3;
+  }
+
+  .button {
+    margin-top: 18px;
+    font-size: 14px;
+  }
+
+  .button:hover {
+    cursor: pointer
+  }
+
+#disabled:hover {
+background: #fafafa;
+cursor: not-allowed
+}
+
+  #choose-file {
+    display: none;
+  }
+
+  h1 {
+    font-family: 'Muli', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 8px
+  }
+  .file-selection {
+    cursor: pointer;
+  }
+
+  img {
+max-height: 60vH
+  }
+}

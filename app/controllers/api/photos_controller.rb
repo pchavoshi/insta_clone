@@ -1,5 +1,14 @@
 class Api::PhotosController < ApplicationController
 
+  def index
+    @photos = Photo.where(user_id: params[:following_ids])
+    if @photos
+      render "api/photos/index"
+    else
+      render json: ["Photos cannot be found"]
+    end
+  end
+
   def show
     @photo = Photo.find(params[:id])
     if @photo
@@ -29,9 +38,10 @@ class Api::PhotosController < ApplicationController
   end
 
   def destroy
-    photo = Photo.find(params[:id])
-
-    photo.destroy
+    @photo = Photo.find(params[:id])
+    @user = current_user
+    @photo.destroy
+    render "api/photos/delete"
 
   end
 

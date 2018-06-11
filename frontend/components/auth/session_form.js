@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Footer from '../footer'
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -35,70 +37,81 @@ class SessionForm extends React.Component {
     return (
       <div className="sessions">
         <div className="container">
-          <div className="box">
-            <img src="https://www.t-mobile.com/content/dam/t-mobile/en-p/cell-phones/apple/apple-iphone-7-plus/gold/Apple-iPhone7-Plus-Gold-1-3x.jpg" />
+          <img id="sakura" src={window.sakura} />
+          <div className="box fone">
+            <img src={window.main} />
           </div>
           <div className="box">
             <div className="main field">
-              {' '}
-              <div className=" session-bar">
-                <div className="session-container">
-                  <div className="top">
-                    <h1 className="title">shiba-gram</h1>
+              <div className="top">
+                <img id="title" src={window.logo} />
 
-                    <p className="text intro"> {this.props.formType}</p>
-                    {this.props.formType === 'Sign up' ? (
-                      <p> to see photos and videos from your friends.</p>
-                    ) : (
-                      ''
-                    )}
-                  </div>
-
-                  <div className="middle">
-                    <form onSubmit={this.handleSubmit}>
-                      <div className="session-input">
-                        <input
-                          className="txtField"
-                          type="text"
-                          value={this.state.username}
-                          placeholder="Username"
-                          onChange={this.update('username')}
-                        />
-
-                        <input
-                          className="txtField"
-                          type="password"
-                          value={this.state.password}
-                          placeholder="Password"
-                          onChange={this.update('password')}
-                        />
-
-                        <input
-                          className="txtField"
-                          type="submit"
-                          value={this.props.formType}
-                        />
-                      </div>
-                    </form>
-
-                    {this.props.formType === 'Sign up' ? (
-                      <p className="text">
-                        By signing up, you agree that you are a Good Boy!{' '}
-                      </p>
-                    ) : (
-                      ''
-                    )}
-                    {this.renderErrors()}
-                  </div>
+                <div className="text intro">
+                  {this.props.formType === 'Sign up' ? (
+                    <h2>Sign up to see photos and videos from your friends.</h2>
+                  ) : (
+                    <p>Login</p>
+                  )}
                 </div>
+              </div>
+
+              <div className="middle">
+                <form onSubmit={this.handleSubmit}>
+                  <div className="session-input">
+                    <input
+                      className="txtField"
+                      type="text"
+                      value={this.state.username}
+                      placeholder="Username"
+                      onChange={this.update('username')}
+                    />
+
+                    <input
+                      className="txtField"
+                      type="password"
+                      value={this.state.password}
+                      placeholder="Password"
+                      onChange={this.update('password')}
+                    />
+
+                    <button
+                      type="button"
+                      className="txtField button"
+                      onClick={this.props.userDemo}
+                    >
+                      Demo Login
+                    </button>
+
+                    <input
+                      className="txtField button"
+                      type="submit"
+                      value={this.props.formType}
+                    />
+                  </div>
+                </form>
+
+                {this.props.formType === 'Sign up' ? (
+                  <p className="text">
+                    By signing up, you agree you are a Good Boy!
+                  </p>
+                ) : (
+                  ''
+                )}
+                <div className="errors">{this.renderErrors()}</div>
               </div>
             </div>
             <div className="sub field">
-              <div className="session-bar">
-                <div className="session-container">{this.props.navLink}</div>
-              </div>{' '}
+              <Link
+                onClick={this.props.removeSessionErrors}
+                to={this.props.formType === 'Sign up' ? '/login' : '/signup'}
+              >
+                {this.props.formType === 'Sign up'
+                  ? 'Have an account? Log in'
+                  : "Don't have an account? Sign Up"}
+              </Link>
             </div>
           </div>
+        <Footer />
         </div>
       </div>
     );

@@ -12,6 +12,7 @@ class PostForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
+
   }
 
   handleSubmit(e) {
@@ -19,8 +20,7 @@ class PostForm extends React.Component {
     formData.append("photo[caption]", this.state.caption);
     formData.append('photo[image]', this.state.imageFile);
     formData.append('photo[user_id]', this.props.currentUser);
-    this.props.processForm(formData);
-    this.props.closeModal();
+    this.props.processForm(formData).then(this.props.closeModal);
   }
 
   update(field) {
@@ -44,23 +44,37 @@ class PostForm extends React.Component {
 
   render (){
     return (
-      <div>
-        <h1> {this.props.formType }</h1>
+      <div className="post-form">
+        <div className="container">
+        <h1> Add a Photo </h1>
 
-        <form>
 
-        <input type="text" value={this.state.caption} placeholder="Caption" onChange={this.update("caption")}/>
-        <input type="file" onChange={this.updateFile} />
-        <button type="button" onClick={this.handleSubmit}>{this.props.formType}</button>
         <img src={this.state.imageUrl} />
+        <form className="form">
+
+
+          <label htmlFor="choose-file" className="file-selection">Select an image</label>
+          <input type="file" id="choose-file" onChange={this.updateFile} onClick={this.props.clearPhotoAddError}/>
+        <input type="text" value={this.state.caption} placeholder="Caption" onChange={this.update("caption")}/>
+
+        {this.state.imageFile === "" ?
+         <button className="button" id="disabled"  type="button"  disabled>{this.props.formType}</button>
+          :
+        <button className="button" type="button" onClick={this.handleSubmit}>{this.props.formType}</button> }
+
+
+
+
 
         </form>
+
+
       </div>
+      </div>
+
     );
   }
 }
 
-//can the image source field be selectively disabled based on the form type?
-//maybe classname={formType}, disabled if formType = editPost
 
 export default PostForm;

@@ -1,19 +1,32 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PhotoShow from './photo_show';
-import { getPhoto } from '../actions/photo_actions';
+import { openModal } from '../actions/modal_actions'
 
 const mSP = (state, ownProps) => {
+  const photoThis = state.entities.photos[ownProps.photoId];
+
+  let commentArray = [];
+  Object.values(state.entities.comments).forEach(comment => {
+    if (photoThis.comment_ids.includes(comment.id)) {
+      commentArray.push(comment);
+    }
+  });
+
   return {
-    photo: state.entities.photos[ownProps.photoId],
-    comments: Object.values(state.entities.comments),
-    modal: state.ui.modal
+    photo: photoThis,
+    comments: commentArray,
+    photoUser: state.entities.users[photoThis.user_id],
+    currentUser: state.entities.users[state.session], 
+    modal: state.ui.modal,
+    isModal: true,
+    isSelf: ownProps.is_self
   };
 };
 
 const mDP = dispatch => {
   return {
-    getPhoto: photoId => dispatch(getPhoto(photoId))
+    openModal: modal => dispatch(openModal(modal))
   };
 };
 

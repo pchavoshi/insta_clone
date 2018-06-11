@@ -1,43 +1,38 @@
 # Shiba-Gram 
-Shiba-Gram is an Instagram-inspired single page web app that allows users to share photos while being able to comment, follow, and like other users' content. 
+Shiba-Gram is an Instagram-inspired single page web app that allows users to share photos while being able to comment on and follow other users' content. 
+
+Check it out at https://shiba-gram.herokuapp.com. 
 
 ## Structure 
 
-The backend was developed using Ruby on Rails and a PostgreSQL database. Photo storage uses Amazon Web Services. The figaro gem allows for AWS secret key validations. 
+The backend was developed using Ruby on Rails and a PostgreSQL database. Photo are stored with AWS S3. 
 
-The frontend utilizes the React/Redux package. 
+The frontend utilizes React components with Redux state management. 
 
-## Main Views 
+## Features: 
+* Sign Up/Login 
+
+* Main Page 
+
+* User Profile Page 
+
+   Users each have a profile page. Other users' profiles allow you to follow or unfollow their account using a folllow toggle button, which dynamically updates a user's follower number. This was achieved via a stateful component. 
+   
+![alt text](https://github.com/pchavoshi/insta_clone/blob/master/github_assets/profile_page_screenshot.png)
+
+* Photo Show Modal 
+
+* Add Photo Modal 
+
+   All modals were created with vanilla JavaScript. Photos are attached using the Paperclip gem. The figaro gem keeps AWS secret keys safe. 
+   
+ ![alt text](https://github.com/pchavoshi/insta_clone/blob/master/github_assets/add_photo_screenshot.png)
+
+* Add/Edit/Delete Comment Form 
 
 
+## Future Additions: 
 
-
-
-
-## Implemented Features: 
-*Sign Up/Login 
-
-*User Profile Page 
-
-*Add Photo Modal 
-
-*Photo Show Modal with Comments
-
-*Add/Edit/Delete Comment Form 
-
-*User Profile Views 
-
-*User Follow Toggle 
-
-## Additions to Be Implemented: 
-
-0. DEMO USER!! 
 1. Likes
-2. Main Feed 
----------------------------
-3. Nav Button to Photo Show 
-4. Infinite Scroll 
-5. User Profile Edit
-6. Nav Bar User Dropdown 
-7. User Search
-8. Edit/Delete Photos
+2. Infinite Scroll 
+3. User Search 

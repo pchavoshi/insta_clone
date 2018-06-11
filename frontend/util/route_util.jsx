@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Nav from '../components/nav';
+import Footer from '../components/footer';
 
 const Auth = ({ component: Component, path, loggedIn, exact }) => (
   <Route
@@ -21,9 +22,10 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
       !loggedIn ? (
         <Redirect to="/signup" />
       ) : (
-        <div>
+        <div className="whole-screen">
           <Nav />
           <Component {...props} />
+          <Footer />
         </div>
       )
     }

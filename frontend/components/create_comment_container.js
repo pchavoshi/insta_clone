@@ -8,14 +8,15 @@ const mSP = (state, ownProps) => {
   return {
     currentUser: state.entities.users[state.session],
     photo: state.entities.photos[ownProps.photoId],
-    formType: 'Add Comment'
+    photoId: ownProps.photoId,
+    formType: 'Add a comment...',
   };
 };
 
 const mDP = dispatch => {
   return {
     sendComment: comment => dispatch(makeComment(comment)),
-    comment: {content: ''}
+    comment: { content: '' }
   };
 };
 
