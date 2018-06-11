@@ -19,6 +19,7 @@
 
   .photo-show {
 
+
   .container {
     background: white;
     display: flex;
@@ -53,9 +54,28 @@
     background: rgba(152,152,152,1)
   }
 
-  .nav-button {
-    background: blue
+.nav-button button {
+  font-size: 25px;
+  border-radius: 2px;
+  border: 2px solid grey
+}
+
+.nav-button button:hover {
+  cursor: pointer
+}
+
+  .next {
+  position: absolute;
+  right: -35px;
+  top: 45%
   }
+
+  .prev {
+    position: absolute;
+    left: -35px;
+    top: 45%
+  }
+
 
   .header {
     display: inline-block;

@@ -25,12 +25,18 @@ const nextPhoto = (thisPhoto + 1);
 
 const openNext = e => {props.openModal({ type: 'show_photo', id: photosArray[nextPhoto]}) };
 if (nextPhoto < photosArray.length) {
-  next_button = <button type="button" className="nav-button" onClick={openNext}> &#8883; </button>;
+  next_button =
+  <div className="nav-button next">
+    <button type="button" onClick={openNext}> &#8883; </button>
+  </div>
 }
 
 const openPrev = e => {props.openModal({ type: 'show_photo', id: photosArray[prevPhoto]}) };
 if (prevPhoto >= 0) {
-  back_button = <button type="button" className="nav-button" onClick={openPrev}> &#8882; </button>;
+  back_button =
+  <div className="nav-button prev">
+    <button type="button" onClick={openPrev}> &#8882; </button>
+  </div>
 }
 }
 
@@ -70,10 +76,13 @@ if (prevPhoto >= 0) {
             photoId={props.photo.id}
             isModal={props.isModal}
           />
-          {back_button}
-          {next_button}
+
         </div>
         </div>
+
+
+        {back_button}
+        {next_button}
       </div>
       </div>
     );
