@@ -4,19 +4,20 @@ import { connect } from 'react-redux';
 import { getAllPhotos, clearAllPhotos } from '../../actions/photo_actions';
 import { closeEdit } from '../../actions/edit_actions';
 
-const mSP = state => {
+const mSP = (state, ownProps) => {
   return {
     currentUser: state.entities.users[state.session],
     users: state.entities.users,
     comments: state.entities.comments,
-    photos: state.entities.photos
+    photos: state.entities.photos,
+    isEdit: state.ui.commentEdit.isEdit
   };
 };
 
 const mDP = dispatch => {
   return {
     getAllPhotos: (followingIds, page) => dispatch(getAllPhotos(followingIds, page)),
-    closeEdit: e => dispatch(closeEdit()),
+    closeEdit: () => dispatch(closeEdit()),
     clearAllPhotos: () => dispatch(clearAllPhotos())
   };
 };

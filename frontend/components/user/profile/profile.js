@@ -5,7 +5,7 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = { followings: [], followers: [], posts: [] };
-    this.is_self = this.is_self.bind(this)
+    this.is_self = this.is_self.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +26,8 @@ class Profile extends React.Component {
       });
     }
   }
+
+
 
   is_self() {
 return this.props.currentUser.id == this.props.user.id

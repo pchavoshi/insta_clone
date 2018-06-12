@@ -9,6 +9,7 @@ class Main extends React.Component {
     super(props);
     this.getPhotos = this.getPhotos.bind(this);
     this.state = {page: 1};
+    this.closeEdit = this.closeEdit.bind(this)
   }
 
   getPhotos() {
@@ -20,6 +21,12 @@ class Main extends React.Component {
   componentDidMount() {
     this.props.clearAllPhotos();
     this.getPhotos()
+  }
+
+  closeEdit() {
+    if (this.props.isEdit) {
+      this.props.closeEdit();
+    }
   }
 
   render() {
@@ -52,8 +59,9 @@ class Main extends React.Component {
         );
       });
     }
+
     return (
-      <div className="main">
+      <div className="main" onClick={this.closeEdit}>
         <div className="background">
         {photoIndexItems}
 

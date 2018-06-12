@@ -6,10 +6,11 @@ import Profile from './user/profile';
 import Main from './main';
 import Modal from './modal';
 import PhotoShowContainer from './photo_show_container';
-import { closeEdit} from '../actions/edit_actions';
 
-const App = ({store }) => (
-  <div className="master" onClick={() => dispatch(closeEdit())}>
+
+const App = ({store }) => {
+
+return <div className="master" >
     <Modal />
     <AuthRoute exact path="/login" component={Login} />
     <AuthRoute exact path="/signup" component={Signup} />
@@ -18,6 +19,6 @@ const App = ({store }) => (
     <ProtectedRoute path="/photos/:photoId" component={PhotoShowContainer} />
 
   </div>
-);
+};
 
 export default App;

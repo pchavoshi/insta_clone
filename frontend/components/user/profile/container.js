@@ -12,7 +12,9 @@ const mSP = (state, ownProps) => {
   return {
     currentUser: state.entities.users[state.session],
     user,
-    photos: Object.values(state.entities.photos)
+    photos: Object.values(state.entities.photos),
+    isEdit: state.ui.commentEdit.isEdit,
+    closeEdit: ownProps.closeEdit
   };
 };
 

@@ -7,27 +7,36 @@ import PhotoShowContainer from './photo_show_container';
 import DeletePhoto from './delete_photo';
 
 
-function Modal({modal, closeModal}) {
-  if (!modal) {
+function Modal(props) {
+  if (!props.modal) {
     return null;
   }
   let component;
-  switch (modal.type) {
+  switch (props.modal.type) {
     case 'add_photo':
       component = <CreatePostContainer />;
       break;
     case 'show_photo':
-      component = <PhotoShowContainer photoId={modal.id} />;
+      component = <PhotoShowContainer photoId={props.modal.id} />;
       break;
     case 'delete_photo':
-      component = <DeletePhoto photoId={modal.id}/>;
+      component = <DeletePhoto photoId={props.modal.id}/>;
       break;
     default:
       return null;
   }
+
+  const closeEdit = e => {
+    e.stopPropagation();
+
+    if (props.isEdit) {
+      props.closeEdit()
+    }
+  };
+
   return (
-    <div className="modal-background" onClick={closeModal} >
-      <div className="modal-child" onClick={e => {e.stopPropagation();  dispatch(closeEdit());}}>
+    <div className="modal-background" onClick={props.closeModal} >
+      <div className="modal-child" onClick={closeEdit}>
         { component }
       </div>
     </div>
@@ -36,13 +45,15 @@ function Modal({modal, closeModal}) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    isEdit: state.ui.commentEdit.isEdit
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    closeEdit: e => dispatch(closeEdit())
   };
 };
 
