@@ -40,6 +40,7 @@ class SessionForm extends React.Component {
           <img id="sakura" src={window.sakura} />
           <div className="box fone">
             <img src={window.main} />
+            <p className="text" id="welcome"> The only social media network for Shibs, by Shibs! </p>
           </div>
           <div className="box">
             <div className="main field">

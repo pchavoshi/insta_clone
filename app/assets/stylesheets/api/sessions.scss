@@ -25,15 +25,25 @@
     font-size: 17px;
     margin: 0 40px 10px;
     text-align: center;
-    color: #999999;
+    color: #51595C;
     font-family: 'Source Sans Pro', sans-serif;
     text-shadow: 1px 1px 1px #f9f2ec;
+  }
+
+  #welcome {
+    color: #51595C;
+    margin-top: 20px;
+    font-size: 16px
   }
 
   .errors {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px;
     color: red;
+  }
+
+  #title {
+    margin-bottom: 5px
   }
 
   .txtField {
@@ -85,7 +95,7 @@
 
   .box img {
     width: auto;
-    height: 100%;
+    height: 80%;
     position: relative;
     z-index: 1;
   }
@@ -120,6 +130,6 @@
   }
 
   .fone {
-    padding-top: 70px;
+    margin-top: 120px;
   }
 }
