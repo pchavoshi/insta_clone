@@ -6,6 +6,7 @@ export const RECEIVE_PHOTO_SHOW = 'RECEIVE_PHOTO_SHOW';
 export const RECEIVE_ALL_PHOTOS = 'RECEIVE_ALL_PHOTOS';
 export const RECEIVE_PHOTO_ADD_ERROR = 'RECEIVE_PHOTO_ADD_ERROR';
 export const CLEAR_PHOTO_ADD_ERROR = 'CLEAR_PHOTO_ADD_ERROR';
+export const CLEAR_ALL_PHOTOS = 'CLEAR_ALL_PHOTOS'
 
 export const receiveAllPhotos = payload => ({
   type: RECEIVE_ALL_PHOTOS,
@@ -36,8 +37,12 @@ export const clearPhotoAddError = error => ({
   type: CLEAR_PHOTO_ADD_ERROR
 });
 
-export const getAllPhotos = following_ids => dispatch =>
-  APIUtil.getPhotos(following_ids).then(payload =>
+export const clearAllPhotos = () => ({
+  type: CLEAR_ALL_PHOTOS
+});
+
+export const getAllPhotos = (following_ids, page) => dispatch =>
+  APIUtil.getPhotos(following_ids, page).then(payload =>
     dispatch(receiveAllPhotos(payload))
   );
 

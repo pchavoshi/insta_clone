@@ -1,8 +1,8 @@
-export const getPhotos = following_ids =>
+export const getPhotos = (following_ids, page) =>
   $.ajax({
     url: 'api/photos',
     method: 'GET',
-    data: { following_ids }
+    data: { following_ids, page}
   });
 
 export const makePhoto = formData =>

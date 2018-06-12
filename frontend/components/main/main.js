@@ -1,13 +1,28 @@
 import React from 'react';
 import PhotoIndexItemContainer from '../photo_index_item_container';
 import UserHeader from '../user_header';
+import Waypoint from 'react-waypoint';
+
 
 class Main extends React.Component {
-  componentDidMount() {
-    this.props.getAllPhotos(this.props.currentUser.followings);
+  constructor(props) {
+    super(props);
+    this.getPhotos = this.getPhotos.bind(this);
+    this.state = {page: 1};
   }
 
-  render() { 
+  getPhotos() {
+      this.props.getAllPhotos(this.props.currentUser.followings, this.state.page);
+      this.setState((prevState, props) => ({  page: prevState.page + 1}));
+  }
+
+
+  componentDidMount() {
+    this.props.clearAllPhotos();
+    this.getPhotos()
+  }
+
+  render() {
     let photos;
     let photoIndexItems;
     if (this.props.photos) {
@@ -39,7 +54,16 @@ class Main extends React.Component {
     }
     return (
       <div className="main">
-        <div className="background">{photoIndexItems}</div>
+        <div className="background">
+        {photoIndexItems}
+
+          <Waypoint
+         onEnter={
+           this.getPhotos
+         }
+         />
+        </div>
+
       </div>
     );
   }

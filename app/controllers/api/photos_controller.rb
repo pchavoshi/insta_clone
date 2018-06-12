@@ -1,7 +1,7 @@
 class Api::PhotosController < ApplicationController
 
   def index
-    @photos = Photo.where(user_id: params[:following_ids])
+  @photos = Photo.where(user_id: params[:following_ids]).paginate(:page => params[:page]).order('created_at ASC')
     if @photos
       render "api/photos/index"
     else
