@@ -22,6 +22,23 @@ const CommentIndex = props => {
     commentForm = <CreateCommentContainer photoId={props.photoId} />;
   }
 
+  const sendLike = e => {
+    const like = {photo_id: props.photoId, user_id: props.currentUser.id};
+    props.createLike(like)
+  }
+
+  const deleteLike = e => {
+    const like = {photo_id: props.photoId, user_id: props.currentUser.id};
+    props.deleteLike(like)
+  }
+
+  let like_button;
+  if (props.current_user_likes) {
+    like_button = <img src={window.liked} onClick={deleteLike} className="icons" />
+  } else {
+    like_button = <img src={window.like} onClick={sendLike} className="icons" />
+  }
+
   return (
     <div className="comment-index">
       <div>{commentsArray}</div>
@@ -29,10 +46,15 @@ const CommentIndex = props => {
       <div className="bottom">
       <hr />
       { props.isModal === true ? (
-        <div className="modal-icon">
-          <label htmlFor={props.photoId}>
-            <img src={window.comment} className="icons" />
-          </label>
+        <div >
+          <div>
+            {like_button}
+
+            <label htmlFor={props.photoId}>
+              <img src={window.comment} className="icons " />
+            </label>
+          </div>
+          <div className="likes-counter">{props.number_likes} Likes </div>
 
           <hr />
         </div>

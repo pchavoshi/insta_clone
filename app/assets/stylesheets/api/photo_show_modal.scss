@@ -126,11 +126,16 @@
   }
 
   .icons {
-    height: 45px;
+    height: 28px;
     width: auto;
-    margin-left: -2px;
-    margin-top: -3px;
-    margin-bottom: -14px;
+    margin: 6px 0 -13px 10px;
+  }
+
+  .likes-counter {
+    font-family: 'Muli', sans-serif;
+    font-size: 14px;
+    font-weight: bolder;
+    margin: 18px 0 -4px 14px;
   }
 
 .icons:hover {
@@ -234,7 +239,7 @@
     font-size: 12px;
     font-family: 'Muli', sans-serif;
     width: 300px;
-    height: 27px;
+    height: 45px;
   }
 
   .comment-field:focus {
@@ -246,7 +251,7 @@
     height: 1px;
     border: 0;
     border-top: 1px solid #e6e6e6;
-    margin: 15px 15px 0px 9px;
+    margin: 10px 15px 0px 9px;
     padding: 0;
   }
   }

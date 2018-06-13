@@ -59,13 +59,19 @@
     margin: 12px 12px 12px 11px;
   }
 
-  .icons {
-    height: 45px;
-    width: auto;
-    margin-left: -2px;
-    margin-top: -3px;
-    margin-bottom: -6px;
-  }
+
+    .icons {
+      height: 28px;
+      width: auto;
+      margin: 6px 0 -13px 8px;
+    }
+
+    .likes-counter {
+      font-family: 'Muli', sans-serif;
+      font-size: 14px;
+      font-weight: bolder;
+      margin: 18px 0 10px 11px;
+    }
 
   .username {
     padding-left: 4px;

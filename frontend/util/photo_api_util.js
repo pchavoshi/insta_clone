@@ -32,3 +32,17 @@ export const getPhoto = photoId =>
     url: `api/photos/${photoId}`,
     method: 'GET'
   });
+
+  export const createLike = like =>
+    $.ajax({
+      url: `api/photos/${like.photo_id}/likes`,
+      method: 'POST',
+      data: { like }
+    });
+
+  export const deleteLike = like =>
+    $.ajax({
+      url: `api/photos/${like.photo_id}/unlike`,
+      method: 'DELETE',
+      data: { like }
+    });

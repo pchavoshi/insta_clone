@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6, allow_nil: true}
 
   has_many :photos, dependent: :destroy
+  has_many :likes
 
   has_many :out_follows,
   foreign_key: :follower_id,
@@ -27,7 +28,7 @@ class User < ApplicationRecord
   through: :in_follows,
   source: :follower
 
-  has_many :comments 
+  has_many :comments
 
   attr_reader :password
 

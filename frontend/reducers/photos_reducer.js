@@ -3,7 +3,9 @@ import {
   DELETE_PHOTO,
   RECEIVE_PHOTO_SHOW,
   RECEIVE_ALL_PHOTOS,
-  CLEAR_ALL_PHOTOS
+  CLEAR_ALL_PHOTOS,
+  RECEIVE_LIKE,
+  DELETE_LIKE
 } from '../actions/photo_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
@@ -37,7 +39,7 @@ const photosReducer = (state = {}, action) => {
       return {};
     }
     case CLEAR_ALL_PHOTOS:
-      return {}; 
+      return {};
     case RECEIVE_ALL_PHOTOS:
       if (action.payload.photos) {
         newState = merge({}, state, action.payload.photos);
@@ -45,6 +47,18 @@ const photosReducer = (state = {}, action) => {
       } else {
         return state;
       }
+    case RECEIVE_LIKE:
+        newState = merge({}, state);
+        const photo_like = newState[action.like.photo_id]
+        photo_like.number_likes += 1;
+        photo_like.current_user_likes = true;
+        return newState;
+    case DELETE_LIKE:
+        newState = merge({}, state);
+        const photo = newState[action.like.photo_id]
+        photo.number_likes -= 1;
+        photo.current_user_likes = false;
+        return newState; 
     default:
       return state;
   }

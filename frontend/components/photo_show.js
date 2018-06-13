@@ -40,15 +40,42 @@ if (prevPhoto >= 0) {
 }
 }
 
+const sendLike = e => {
+  const like = {photo_id: props.photo.id, user_id: props.currentUser.id};
+  props.createLike(like)
+}
+
+const deleteLike = e => {
+  const like = {photo_id: props.photo.id, user_id: props.currentUser.id};
+  props.deleteLike(like)
+}
+
+let like_button;
+if (props.current_user_likes) {
+  like_button = <img src={window.liked} onClick={deleteLike} className="icons" />
+} else {
+  like_button = <img src={window.like} onClick={sendLike} className="icons" />
+}
+
+
     return (
       <div  className="photo-show">
         <div className="container">
           <img src={props.photo.image} className="photo" />
           {delete_button}
           {props.modal === 'notModal' ? (
-            <label htmlFor={props.photo.id}>
-              <img src={window.comment} className="icons" />
-            </label>
+            <div >
+              <div>
+                {like_button}
+
+                <label htmlFor={props.photoId}>
+                  <img src={window.comment} className="icons " />
+                </label>
+              </div>
+              <div className="likes-counter">{props.number_likes} {props.number_likes === 1 ? ("like") : ("likes")} </div>
+
+            </div>
+
           ) : ('') }
         <div className="allComments">
           <div className="container">

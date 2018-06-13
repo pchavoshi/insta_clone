@@ -1,7 +1,15 @@
 json.photo do
   json.set! @photo.id do
+    if photo.likes.include?(current_user.id)
+      current_user_likes = true
+    else
+      current_user_likes = false
+    end
+
     json.extract! @photo, :id, :user_id, :caption, :image
     json.comment_ids @photo.comments.pluck(:id)
+    json.number_likes @photo.likes.count
+    json.current_user_likes current_user_likes
   end
 end
 

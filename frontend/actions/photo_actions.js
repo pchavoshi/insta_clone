@@ -6,7 +6,9 @@ export const RECEIVE_PHOTO_SHOW = 'RECEIVE_PHOTO_SHOW';
 export const RECEIVE_ALL_PHOTOS = 'RECEIVE_ALL_PHOTOS';
 export const RECEIVE_PHOTO_ADD_ERROR = 'RECEIVE_PHOTO_ADD_ERROR';
 export const CLEAR_PHOTO_ADD_ERROR = 'CLEAR_PHOTO_ADD_ERROR';
-export const CLEAR_ALL_PHOTOS = 'CLEAR_ALL_PHOTOS'
+export const CLEAR_ALL_PHOTOS = 'CLEAR_ALL_PHOTOS';
+export const RECEIVE_LIKE = 'RECEIVE_LIKE';
+export const DELETE_LIKE = 'DELETE_LIKE'
 
 export const receiveAllPhotos = payload => ({
   type: RECEIVE_ALL_PHOTOS,
@@ -40,6 +42,24 @@ export const clearPhotoAddError = error => ({
 export const clearAllPhotos = () => ({
   type: CLEAR_ALL_PHOTOS
 });
+
+export const receiveLike = like => ({
+  type: RECEIVE_LIKE,
+  like
+})
+
+export const removeLike = like => ({
+  type: DELETE_LIKE,
+  like
+})
+
+export const createLike = like => dispatch =>
+  APIUtil.createLike(like).then(like => dispatch(receiveLike(like))
+);
+
+export const deleteLike = like => dispatch =>
+  APIUtil.deleteLike(like).then(like => dispatch(removeLike(like))
+);
 
 export const getAllPhotos = (following_ids, page) => dispatch =>
   APIUtil.getPhotos(following_ids, page).then(payload =>

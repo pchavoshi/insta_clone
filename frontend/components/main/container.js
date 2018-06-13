@@ -10,7 +10,7 @@ const mSP = (state, ownProps) => {
     users: state.entities.users,
     comments: state.entities.comments,
     photos: state.entities.photos,
-    isEdit: state.ui.commentEdit.isEdit
+    isEdit: state.ui.commentEdit.isEdit,
   };
 };
 
